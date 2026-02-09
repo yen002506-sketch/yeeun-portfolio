@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Create star every 4 seconds to ensure only one is distinct at a time
   setInterval(() => {
     createShootingStar();
-  }, 4000);
+  }, 3500);
 
 
 
@@ -370,3 +370,22 @@ document.addEventListener('DOMContentLoaded', () => {
   */
 
 });
+
+// --- Top Button Logic ---
+const topBtn = document.getElementById('topBtn');
+
+window.addEventListener('scroll', () => {
+  if (!topBtn) return;
+  if (window.scrollY > 500) {
+    topBtn.classList.add('active');
+  } else {
+    topBtn.classList.remove('active');
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}

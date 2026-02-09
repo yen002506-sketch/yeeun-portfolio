@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!skillSection) return;
 
     // Check Total Lengths
+    /*
     skillLines.forEach(path => {
         const len = path.getTotalLength();
         path.style.strokeDasharray = len;
         path.style.strokeDashoffset = len;
         path.dataset.len = len;
     });
+    */
 
     const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
@@ -57,10 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.iconsSequenceTimeout) clearTimeout(window.iconsSequenceTimeout);
 
             // Reset lines (optional, but good for cleanliness)
+            /* 
             skillLines.forEach(path => {
                 const len = parseFloat(path.dataset.len);
                 path.style.strokeDashoffset = len;
             });
+            */
             centerCircle.classList.remove('active');
         }
 
@@ -77,10 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const drawProg = progress;
 
+        /*
         skillLines.forEach(path => {
             const len = parseFloat(path.dataset.len);
             path.style.strokeDashoffset = len * (1 - drawProg);
         });
+        */
 
         // Trigger Circle at end of line drawing
         if (drawProg > 0.9) {

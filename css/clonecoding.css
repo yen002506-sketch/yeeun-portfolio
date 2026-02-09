@@ -114,7 +114,6 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 30px;
-    filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
 
@@ -144,6 +143,17 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
+    width: 10px;
+    height: 1px;
+    background: #333;
+    transform-origin: bottom right;
+}
+.clone-arrow::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
     width: 10px;
     height: 1px;
     background: #333;

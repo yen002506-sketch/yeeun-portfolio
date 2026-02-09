@@ -146,16 +146,17 @@
 
 /* Big Title with Mask */
 .end-title {
-    font-size: 8rem;
+    font-size: 13rem;
+    margin-top: 50px;
     /* Adjust based on viewport */
     font-weight: 900;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Pretendard',sans-serif;
     /* or similar bold sans */
     margin-bottom: 80px;
 
     /* Image Mask for Text */
-    background: url('../img/whale-bg1.png') no-repeat center center;
+    background: url('../img/viedeo1.gif') center center;
     background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
@@ -171,8 +172,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 80px;
-    max-width: 1200px;
+    gap: 8%;
     width: 100%;
 }
 
@@ -225,7 +225,7 @@
 
 .end-name-en {
     font-family: 'Noto Serif Display', serif;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 700;
     font-style: italic;
     margin-bottom: 5px;
@@ -234,6 +234,7 @@
 
 .end-role {
     font-size: 0.9rem;
+    padding-left: 10px;
     letter-spacing: 1px;
     color: #666;
     text-transform: uppercase;
@@ -242,18 +243,22 @@
 
 .end-contact-info {
     font-size: 0.95rem;
-    color: #333;
-    line-height: 1.6;
+    padding-left: 10px;
+    color: #797979;
+    line-height: 1.4;
     margin-bottom: 50px;
+    margin-top: 50px;
     font-family: 'Pretendard', sans-serif;
 }
 
 .end-contact-info p {
     margin-bottom: 4px;
+   
 }
 
 .end-desc p {
     font-family: 'Pretendard', sans-serif;
+    padding-left: 10px;
     font-size: 1rem;
     line-height: 1.7;
     color: #444;

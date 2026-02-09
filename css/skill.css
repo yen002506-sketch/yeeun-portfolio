@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 20vh;
     /* Relative padding */
     padding-bottom: 20vh;
     overflow: visible;
@@ -115,10 +115,10 @@
     /* Extend fully to bottom */
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    /* Relative width */
-    max-width: 1100px;
-    /* Cap width */
+    width: 80%;
+    /* Reduced relative width */
+    max-width: 900px;
+    /* Cap width to match icons row approx */
     height: auto;
     /* Stretch from top to bottom */
     z-index: 1;
@@ -132,9 +132,26 @@
 }
 
 .skill-line-path {
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    transition: stroke-dashoffset 0.1s linear;
+    /* Large gap to simulate falling "segment" */
+    stroke-dasharray: 200 1200;
+    stroke-dashoffset: 1400;
+    /* Move continuously */
+    animation: activeLineFlow 3s linear infinite;
+    opacity: 0.5; 
+}
+
+@keyframes activeLineFlow {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.skill-line-guide {
+    stroke: #e0e0e0;
+    /* Light gray guide */
+    stroke-width: 1px;
+    fill: none;
+    opacity: 0.5;
 }
 
 /* Convergence Circle */
@@ -146,17 +163,46 @@
     transform: translateX(-50%) scale(0);
     width: 50px;
     height: 50px;
-    background: #0f2e7b;
+    
+    /* Rainbow Background */
+    background: linear-gradient(124deg, #4c0cc4, #4a69f3, #a3a4e6, #a4b5eb, #dda4d3, #7c8add, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 400% 400%;
+    
     border-radius: 50%;
     z-index: 5;
     /* Improve visibility over wave */
-    box-shadow: 0 0 15px rgba(15, 46, 123, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     /* Glow for visibility */
     transition: transform 0.3s ease-out;
+    
+    /* Continuous Rainbow Animation */
+    animation: rainbowMove 12s ease infinite;
 }
 
 .skill-center-circle.active {
-    transform: translateX(-50%) scale(1);
+    /* Combine Pulse and Rainbow animations */
+    animation: pulseCircle 1.5s infinite alternate ease-in-out, rainbowMove 15s ease infinite;
+}
+
+@keyframes rainbowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseCircle {
+    0% {
+        transform: translateX(-56%) scale(1.8);
+    }
+    100% {
+        transform: translateX(-56%) scale(2.0);
+    }
 }
 
 /* Wave SVG Area */

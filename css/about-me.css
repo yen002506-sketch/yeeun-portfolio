@@ -67,40 +67,57 @@
 
 .about-me .intro-content .main-copy {
     margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
 }
 
-.about-me .intro-content .desc-copy {
+/* Initial State for Children */
+.about-me .intro-content .main-copy span.sub,
+.about-me .intro-content .main-copy .title,
+.about-me .intro-content .desc-copy h2,
+.about-me .intro-content .desc-copy p {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.about-me.in-view .intro-content .main-copy {
+/* 1. "I'm a" */
+.about-me.in-view .intro-content .main-copy span.sub {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.1s;
 }
 
-.about-me.in-view .intro-content .desc-copy {
+/* 2. "Pathfinder" */
+.about-me.in-view .intro-content .main-copy .title {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.3s;
 }
 
+/* 3. Subtitle */
+.about-me.in-view .intro-content .desc-copy h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* 4. Description */
+.about-me.in-view .intro-content .desc-copy p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
 .about-me .intro-content .main-copy span.sub {
     display: block;
-    font-size: 5rem;
+    font-size: 110px;
     font-family: 'Noto Serif Display', serif;
-    line-height: 1;
+    line-height: 1.3;
     color: #fff;
 }
 
 .about-me .intro-content .main-copy .title {
-    font-family: 'Ephesis', cursive;
-    font-size: 8rem;
+    font-family: 'Beau Rivage', cursive;
+    font-size: 180px;
     font-weight: 400;
     font-style: italic;
     margin: 0;
@@ -108,14 +125,22 @@
     color: #fff;
     position: relative;
     display: inline-block;
+    margin-bottom: 20px;
+}
+
+.about-me .intro-content .desc-copy span {
+    font-size: 50px;
+    font-family: 'Handel Gothic', sans-serif;
+  
 }
 
 
 .about-me .intro-content .desc-copy h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 40px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
     margin-bottom: 20px;
-    line-height: 1.4;
+    line-height: 1.2;
     color: #fff;
 }
 

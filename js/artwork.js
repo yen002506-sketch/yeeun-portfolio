@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (slider && list) {
         // 1. Duplicate list for infinite loop illusion
-        // We clone the inner HTML to double the content
-        list.innerHTML += list.innerHTML;
+        // Clone 4 times to ensure enough buffer for wide screens
+        const originalContent = list.innerHTML;
+        list.innerHTML = originalContent + originalContent + originalContent + originalContent;
 
         // 2. Drag to Scroll Logic
         let isDown = false;
@@ -60,10 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 slider.scrollLeft += autoScrollSpeed;
 
                 // Infinite Loop Reset
-                // When we've scrolled past the original set (half of total width), reset to 0
-                // Note: We use scrollWidth / 2 because we doubled the content.
-                if (slider.scrollLeft >= slider.scrollWidth / 2) {
-                    slider.scrollLeft = 0;
+                // When we've scrolled past one set (1/4 of total), reset by subtracting that width
+                // This ensures seamless looping without jumps
+                const singleSetWidth = slider.scrollWidth / 4;
+                if (slider.scrollLeft >= singleSetWidth) {
+                    slider.scrollLeft -= singleSetWidth;
                 }
             }
             requestAnimationFrame(animate);

@@ -52,12 +52,22 @@
         </div>
       </div>
 
-      <div class="wave-wrap">
+      <!-- <div class="wave-wrap">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
           <path d="M0,35 C240,80 400,10,720,40 960,60 1200,40 1440,60 L1440,120 L0,120 Z" class="wave wave1" />
           <path d="M0,30 C240,30 480,90 720,60 960,20 1200,80 1440,60 L1440,120 L0,120 Z" class="wave wave2" />
         </svg>
       </div>
+       -->
+
+       <div class="wavenew">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+      
+        <div class="wave wave4"></div>
+       </div>
+
+
 
       <h1 class="title"><img src="img/Pathfinder-logo.svg" alt=""></h1>
     </section>
@@ -135,11 +145,13 @@
           <div class="wm-title-bottom">where<br>meaning lives</div>
 
           <div class="wm-footer">
-            <div class="wm-left">UX - Design - Insight</div>
-            <div class="wm-right">
-              Meaning lives beneath the surface.<br>
+            <div class="wm-left"><h1>UX - Design - Insight</h1>
+            <p>Meaning lives beneath the surface.<br>
               True UX is shaped by context, research, and intention.<br>
-              Design begins where insight goes deep.
+              Design begins where insight goes deep.</p></div>
+            <div class="wm-right">
+              Beyond visuals, toward understanding <br>
+              Every decision has a reason.
             </div>
           </div>
 
@@ -185,7 +197,7 @@
 
               </div>
               <div class="desc-copy">
-                <h2>"경험의 흐름을 찾는 디자이너"</h2>
+                <h2><span>"</span> 경험의 흐름을 찾는 디자이너 <span>"</span></h2>
                 <p>
                   모든 경험은 나를 방향을 설계하는 디자이너로 만들었습니다.<br>
                   다양한 경험을 바탕으로 사용자의 여정 속에서 가장 올바른 길을 발견<br>
@@ -507,7 +519,23 @@
               <linearGradient id="linear-gradient-6" x1="877.09" y1="245.84" x2="877.09" y2="718.35"
                 xlink:href="#linear-gradient" />
             </defs>
-            <!-- Added class 'skill-line-path' to paths for JS animation -->
+            <!-- Guide Lines (Static Background) -->
+            <path class="skill-line-guide" d="M1255,240.26S1079.63,477,1078.63,712.18"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M937.82,240.26s114.31,223,140.81,464.79"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M796.67,240.26s207.46,189.23,282,471.92"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M1078.63,240.26V712.18" transform="translate(-675.15 -239.82)" fill="none"
+              stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M1352.71,240.26c0,0,-241.58,223.62,-274.08,477.62"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M1487.44,240.26s-345.31,191.61-408.81,485.11"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+            <path class="skill-line-guide" d="M675.42,246.26S981.5,439.5,1078.55,718.18"
+              transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10" />
+
+            <!-- Animated Lines (Foreground) -->
             <path class="skill-line-path" d="M1255,240.26S1079.63,477,1078.63,712.18"
               transform="translate(-675.15 -239.82)" fill="none" stroke-miterlimit="10"
               stroke="url(#linear-gradient)" />
@@ -821,6 +849,11 @@
       </div>
     </footer>
 
+  </div>
+
+  <!-- Top Button -->
+  <div id="topBtn" class="top-btn" onclick="scrollToTop()">
+    <img src="img/topbtn.svg" alt="Top">
   </div>
 
   <script src="js/jquery-3.7.1.min.js"></script>
