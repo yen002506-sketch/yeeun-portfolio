@@ -1,0 +1,46 @@
+/* Area Bottom Section for Vertical Line */
+.areabottom {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    /* Full viewport height or adjust as needed */
+    background: #fff;
+    /* Match previous section background or transparent */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* Center the line */
+    align-items: flex-start;
+    /* Start from top */
+}
+
+.ab-line-area {
+    position: relative;
+    width: 1px;
+    /* Match line width */
+    height: 97%;
+    /* Line length relative to section */
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.ab-line {
+    width: 2px;
+    /* Increased visibility */
+    height: 90%;
+    background-color: #0f2e7b;
+    transform: translateY(-100%);
+    /* Start hidden above */
+    transition: transform 0.1s linear;
+}
+
+.areabottom .areaarrow {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #0f2e7b;
+    border-radius: 50%;
+}

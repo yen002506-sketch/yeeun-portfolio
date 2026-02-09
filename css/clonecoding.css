@@ -1,0 +1,224 @@
+/* Clone Coding Section Styles */
+.clonecoding {
+    width: 100%;
+    background-color: #fff;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header */
+.clone-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.clone-title {
+    font-family: 'Times New Roman', Times, serif;
+    /* Serif font matching other headers */
+    font-size: 4rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.clone-subtitle {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* List Container */
+.clone-list {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+}
+
+/* List Item */
+.clone-item {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    /* Default height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Hover State */
+/* Hover State */
+.clone-item:hover {
+    height: 150px;
+    /* Reduced expanded height */
+}
+
+/* Overlay for Hover State */
+.clone-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.clone-item:hover::before {
+    opacity: 1;
+}
+
+/* Default Content Wrapper (Small Img + Title + Arrow) */
+.clone-content-default {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 2;
+    /* Above overlay */
+}
+
+.clone-item:hover .clone-content-default {
+    opacity: 0;
+    /* Hide default content on hover */
+    display: none;
+}
+
+/* Elements: Small Image */
+.clone-small-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.clone-item:hover .clone-small-img {
+    filter: grayscale(0%);
+}
+
+.clone-text-default {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    font-weight: 400;
+    flex: 1;
+    /* Take remaining space */
+}
+
+.clone-arrow {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    position: relative;
+}
+
+.clone-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 10px;
+    height: 1px;
+    background: #333;
+    transform-origin: bottom right;
+}
+
+/* Hover Content Wrapper (Centered Big Title) */
+.clone-content-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.1s;
+    /* Slight delay */
+    width: 100%;
+    z-index: 2;
+    /* Above overlay */
+}
+
+.clone-item:hover .clone-content-hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.clone-text-hover {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Images Classes */
+/* Item 1 */
+.clone-item.item-1:hover {
+    background-image: url('../img/clonebig1.png');
+}
+
+.clone-item.item-2:hover {
+    background-image: url('../img/clonebig2.png');
+}
+
+.clone-item.item-3:hover {
+    background-image: url('../img/clonebig3.png');
+}
+
+.clone-item.item-4:hover {
+    background-image: url('../img/clonebig4.png');
+}
+
+.clone-item.item-5:hover {
+    background-image: url('../img/clonebig5.png');
+}
+
+.clone-item.item-6:hover {
+    background-image: url('../img/clonebig6.png');
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .clone-text-default {
+        font-size: 1.5rem;
+    }
+
+    .clone-small-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .clone-item {
+        padding: 0 20px;
+    }
+}

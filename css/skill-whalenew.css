@@ -1,0 +1,123 @@
+/* Skill Whale New Section */
+.skill-whalenew {
+    position: relative;
+    width: 100%;
+    /* Rely on inner images for height */
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+    background: #0f2e7b;
+    /* Fallback color */
+}
+
+.sw-bg-layer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.sw-bg-layer img {
+    width: 100%;
+    /* Full width */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+}
+
+.sw-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align top */
+    padding-top: 15vh;
+    /* Adjust to place under 'ma project' text */
+}
+
+/* Vertical Line Top */
+.sw-line-area {
+    position: relative;
+    width: 1px;
+    height: 85vh;
+    /* Increased further per request (50vh -> 75vh) */
+    overflow: hidden;
+    z-index: 2;
+    margin-bottom: 0;
+}
+
+.sw-line {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateY(-20%);
+    transition: transform 0.1s linear;
+}
+
+/* Whale SVG Area */
+.sw-whale-area {
+    position: relative;
+    width: 40vw;
+    /* Increased by 2.5x (20vw -> 50vw) */
+    max-width: 750px;
+    min-width: 500px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    top: 15%;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sw-whale-area.show {
+    opacity: 1;
+}
+
+.sw-whale-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.sw-whale-path {
+    fill: none;
+    stroke: #fff;
+    /* Override to white if background is dark, per reference */
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 2000;
+    /* Arbitrary large number, will be set by JS */
+    stroke-dashoffset: 2000;
+}
+
+/* Vertical Line Bottom */
+.sw-line-bottom-area {
+    position: relative;
+    width: 1px;
+    height: 50vh;
+    /* Adjust height as needed */
+    overflow: hidden;
+    z-index: 2;
+    margin-top: -5%;
+    /* Overlap slightly or adjust spacing */
+    opacity: 1;
+}
+
+.sw-line-bottom {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateY(-100%);
+    /* Start hidden above */
+    transition: transform 0.1s linear;
+}

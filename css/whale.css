@@ -1,0 +1,154 @@
+/* 2번 섹션 */
+
+.whale-line{
+  height: 1536px;         
+  background: linear-gradient(to bottom, #314572 15%, #152349 77%);   
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+/* .whale-line parent class added for specificity */
+.whale-line .timeline{
+  position: relative;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* 타임라인 트랙 (가운데 선) */
+.whale-line .timeline-line-track{
+  position: absolute;
+  left: 50%;
+  top: 120px; /* Star (approx 60px) + Gap from centering */
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: calc(100%);
+  background: rgba(255,255,255,0.15);
+}
+
+/* 타임라인 채워지는 선 (JS 제어) */
+.whale-line .timeline-line-fill{
+  width: 100%;
+  height: 0%; 
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  transition: height 0.1s linear;
+}
+
+/* 캡슐 래퍼 */
+
+.whale-line .capsule-wrap{
+  position: relative;
+  z-index: 2; /* 라인 위에 */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 섹션 중앙 */
+  /* padding-top 조절? justify-content: center로 일단 중앙 배치 */
+}
+
+.whale-line .capsule-top-star {
+  padding-bottom: 80px;
+  margin-top: 70px;
+
+  
+}
+
+/* ✅ 캡슐 */
+.whale-line .capsule{
+  position: relative;
+  width: 393px;            
+  height: 781px;           
+  border-radius: 999px;
+  border: 1px solid #fff;
+  backdrop-filter: blur(10px);
+  /* overflow: hidden; -> SVG가 튀어나오려면 visible이어야 하는데, 
+     border-radius로 내용물 자르려면 hidden이어야 함. 
+     해결책: 미디어만 따로 자르고 svg는 absolute로 자유롭게. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whale-line {  display: flex;
+  align-items: center;
+  justify-content: center;}
+
+.whale-line .capsule-text{
+  position: absolute;
+  padding-bottom: 30px;
+  
+}
+
+/* SVG Text Layer */
+.whale-line .capsule-svg-layer {
+  position: absolute;
+  top: -50px; left: -50px; right: -50px; bottom: -50px; /* 넉넉하게 */
+  pointer-events: none;
+  z-index: 10;
+}
+/* SVG Text 스타일 */
+.whale-line .capsule-svg-layer text textPath {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* 캡슐 미디어 영역 */
+.whale-line .capsule-media{
+  position: absolute;
+  inset: 28px; /* 보더 안쪽 여백 */
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 1; /* 글자 뒤 */
+}
+
+.whale-line .capsule-media img,
+.whale-line .capsule-media video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  display: block;
+}
+
+.whale-line .inner-text {
+  position: absolute;
+  top: 18%; /* 대략 이미지 위치 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  z-index: 5;
+}
+
+/* 가운데 문구 pill */
+.whale-line .capsule-label{
+  position: absolute;
+  z-index: 20;
+  padding: 26px 100px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(2px);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.whale-line .capsule-bottom-arrow {
+  margin-top: 130px;
+}
+
+
+
+
+
+

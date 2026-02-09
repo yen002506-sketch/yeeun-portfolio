@@ -1,0 +1,372 @@
+@charset "utf-8";
+/* 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Ephesis&family=Great+Vibes&family=Gravitas+One&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap');
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Optional: smooth scrolling */
+}
+
+body {
+  overflow-x: hidden;
+  /* scroll-snap-type can be on html or body depending on browser, generally html is safer for global snap */
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+.wrap {
+  background: #fff;
+  font-family: "Pretendard", sans-serif;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header h1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translatex(-50%);
+  color: #fff;
+}
+
+.logo {
+  margin-left: 50px;
+  margin-top: 25px;
+
+}
+
+.logo img {
+  width: 70%;
+}
+
+.title.en {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Noto Serif Display", serif;
+  font-size: 16px;
+}
+
+.gnb {
+  margin-left: auto;
+}
+
+.gnb ul {
+  display: flex;
+  margin-right: 80px;
+}
+
+.gnb ul li {
+  margin-left: 36px;
+  color: #ffffff;
+  font-family: "Noto Serif Display", serif;
+  font-size: 16px;
+}
+
+
+/* hero */
+.hero {
+  background: linear-gradient(to bottom, #0D1C3C 22%, #1D2E5A 43%, #5E5D7C 67%, #E8C6BF 100%);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* wave가 밖으로 튀는 거 정리 */
+}
+
+/* Shooting Star Animation */
+.hero .shooting-star {
+  position: absolute;
+  width: 4px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(253, 255, 220);
+  /* Simple glow only, no rings */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* .hero .shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  /* Shorter tail */
+/* height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+  right: 0;
+} */
+
+@keyframes shooting {
+  0% {
+    transform: rotate(-45deg) translateX(0);
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+    /* Fade out faster */
+  }
+
+  100% {
+    transform: rotate(-45deg) translateX(-800px);
+    opacity: 0;
+  }
+}
+
+
+
+#space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero .start {
+  position: relative;
+  z-index: 5;
+  /* 캔버스 위에 위치 */
+  display: flex;
+  justify-content: center;
+  /* 가로 중앙 */
+  align-items: center;
+  /* 세로 중앙 */
+  margin-top: 20px;
+
+}
+
+.hero .start-click {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-top: 226px;
+  cursor: pointer;
+  width: fit-content;
+  gap: 14px;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0));
+}
+
+
+.hero .start-click .star img {
+  width: 70px;
+}
+
+/* Star Hover Animation */
+@keyframes spinStar {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero .start-click:hover .star img {
+  animation: spinStar 6s linear infinite;
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.7));
+}
+
+.hero .start-click button {
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Noto Serif Display", serif;
+  font-size: 20px;
+}
+
+.hero .title {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero .title img {
+  width: 85%;
+  max-width: 1400px;
+  height: auto;
+  margin-top: 40px;
+}
+
+.wave-wrap {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  z-index: 5;
+  /* Text 위로 파도 */
+}
+
+.wave-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wave {
+  transform-origin: center;
+}
+
+.wave1 {
+  fill: rgba(13, 28, 60, 0.55);
+  animation: gentleWave1 6s ease-in-out infinite;
+}
+
+.wave2 {
+  fill: rgba(32, 60, 119, 0.541);
+  animation: gentleWave2 4s ease-in-out infinite;
+}
+
+@keyframes gentleWave1 {
+
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1.1);
+  }
+
+  50% {
+    transform: translateY(-5px) scaleY(1.05);
+  }
+}
+
+@keyframes gentleWave2 {
+
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1.35);
+  }
+
+  50% {
+    transform: translateY(-8px) scaleY(1.5);
+  }
+}

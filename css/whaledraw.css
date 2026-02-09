@@ -1,0 +1,225 @@
+/* 3번 섹션 (Whale Middle) */
+.whale-middle {
+  position: relative;
+  width: 100%;
+  height: 4500px;
+  /* 높이를 늘려 애니메이션 속도 저하 및 고정 시간 연장 */
+  /* background: #152349; Existing background color commented out */
+  background: url('../img/whale-bg1.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  z-index: 10;
+}
+
+/* Background Transition Overlay */
+.whale-middle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  /* 넉넉한 높이 */
+  background: linear-gradient(to bottom, transparent, #010F2A);
+  z-index: 1;
+  /* 컨텐츠 뒤, 배경 앞? 배경 이미지는 element 자체 배경이므로 자식(overlay)이 그 위에 옴. 
+                 하지만 wm-content는 sticky라 z-index로 제어 필요하지 않을 수도 있지만, 
+                 확실하게 하기 위해 wm-content보다 낮아야 할 수도 있음. 
+                 하지만 wm-content는 sticky라 스크롤영역 전체를 덮는 after와는 별개임.
+                 일단 1로 둬서 혹시 모를 간섭 방지. */
+  pointer-events: none;
+}
+
+.whale-middle .wm-content {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG 배치 */
+/* SVG 배치 */
+.whale-middle .wm-svg {
+  position: absolute;
+  pointer-events: none;
+  opacity: 1;
+  /* 가시성 확보 */
+}
+
+/* 1번 SVG: 라인 (중앙 상단 배치 - 타임라인 연결) */
+/* .whale-middle .wm-line {
+  width: 840px;
+  top: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-1px);
+  /* 선 두께 보정 */
+
+
+/* 2번 SVG: 고래 (중앙 배치) */
+.whale-middle .wm-whale {
+  width: 100%;
+  /* 1200 * 1.3 */
+  top: 52%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  /* 중앙 정렬 유지 */
+  z-index: 2;
+
+}
+
+.whale-middle .draw-path {
+  /* JS에서 stroke-dasharray 조절 */
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 0.5px;
+}
+
+/* Text Layer */
+.whale-middle .wm-text-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  pointer-events: none;
+}
+
+.whale-middle .wm-title-top {
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  font-family: 'Noto Serif Display', serif;
+  /* 명조체 */
+  font-size: 230px;
+  letter-spacing: -3px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  /* 배경처럼 은은하게 */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.whale-middle .wm-title-bottom {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  text-align: left;
+  font-family: 'Ephesis', cursive;
+  /* 필기체 느낌? 혹은 요청하신 Serif 이탤릭? Reference looks like Italic Serif */
+  font-style: italic;
+  font-size: 150px;
+  line-height: 0.7;
+  color: #5A5E74;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out 0.2s;
+  /* 딜레이 */
+}
+
+.whale-middle .wm-footer {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out 0.5s;
+}
+
+.whale-middle .wm-left {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.whale-middle .wm-right {
+  text-align: right;
+  line-height: 1.6;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.whale-middle .wm-bottom-line {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: #fff;
+  opacity: 0;
+  transition: all 1s ease-out 0.8s;
+}
+
+/* 수업용 클래스 (JS에서 붙일 예정) */
+.wm-active .wm-title-top,
+.wm-active .wm-title-bottom,
+.wm-active .wm-footer,
+.wm-active .wm-bottom-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* sub -whale */
+.sub-whale {
+  position: relative;
+  width: 100%;
+  height: 250vh;
+  /* Scroll space */
+  background: #010F2A;
+  z-index: 20;
+  /* Ensure it covers the whale-middle SVG */
+}
+
+.sub-whale .innercard {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center vertically */
+  overflow: hidden;
+}
+
+.sub-whale .innercard ul {
+
+  justify-content: space-between;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  /* 붙이고 싶으면 0 */
+
+}
+
+.sub-whale .innercard ul li {
+  width: 100%;
+}
+
+.sub-whale .innercard ul li img {
+  width: 100%;
+}
+
+/* Mood Card Animation */
+.sub-whale .innercard ul li.card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sub-whale .innercard ul li.card.active {
+  opacity: 1;
+  transform: translateY(0);
+}

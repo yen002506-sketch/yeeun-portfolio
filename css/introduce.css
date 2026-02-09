@@ -1,0 +1,262 @@
+/* Introduce Section */
+.introduce {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+    /* Scroll distance */
+    background: #092671;
+    /* Matching About Me background or similar dark blue */
+    color: #fff;
+    overflow: visible;
+}
+
+.introduce .intro-sticky-wrap {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* White Overlay for Transition */
+.introduce .intro-white-overlay {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: 9999;
+    /* Highest in sticky container */
+    pointer-events: none;
+    transition: opacity .95s ease;
+    /* Smooth but responsive */
+}
+
+/* Vertical Line SVG */
+.introduce .intro-line-svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    z-index: 1;
+    overflow: visible;
+}
+
+.introduce .intro-line-path {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 1;
+    stroke-dasharray: 1000;
+    /* Approximate max height */
+    stroke-dashoffset: 1000;
+}
+
+/* Text Styling */
+.introduce .intro-text-group {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    background: #092671;
+    padding: 20px;
+}
+
+.introduce .intro-text-group.top {
+    top: 19%;
+}
+
+.introduce .intro-text-group.bottom {
+    top: 50%;
+}
+
+.introduce .intro-text-item {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ccc;
+    display: block;
+}
+
+.introduce .intro-text-item strong {
+    font-weight: 700;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* Active State for Text */
+.introduce .intro-text-group.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.introduce .intro-text-group.top {
+    transform: translateX(-50%) translateY(20px);
+}
+
+.introduce .intro-text-group.bottom {
+    transform: translateX(-50%) translateY(20px);
+}
+
+/* Star at the end */
+/* Star at the end */
+.introduce .intro-star-end {
+    position: absolute;
+    bottom: 5%;
+    /* Adjust based on line end */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 30px;
+    /* Increased size for image */
+    height: 30px;
+    transition: transform 0.3s ease-out;
+}
+
+.introduce .intro-star-end img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.introduce .intro-star-end.active {
+    transform: translateX(-50%) scale(1);
+}
+
+/* -------------------------------------------------- */
+/* Introduce End Section (Profile) */
+/* -------------------------------------------------- */
+.introduce-end {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+/* Big Title with Mask */
+.end-title {
+    font-size: 8rem;
+    /* Adjust based on viewport */
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* or similar bold sans */
+    margin-bottom: 80px;
+
+    /* Image Mask for Text */
+    background: url('../img/whale-bg1.png') no-repeat center center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    width: 100%;
+    text-align: center;
+    letter-spacing: -2px;
+}
+
+/* Profile Content Wrapper */
+.end-content-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+
+.end-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    filter: grayscale(0%);
+}
+
+
+.deco-star-small {
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    width: 20px;
+    height: 20px;
+    /* Simple cross star */
+    background: #444;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    /* Actually that's a box. Let's start simple. */
+    background: transparent;
+    color: #333;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deco-star-small::after {
+    content: '+';
+    /* Simple representation */
+    font-weight: 300;
+}
+
+/* 2. Text Info Area */
+.end-text-info {
+    flex: 1;
+    max-width: 600px;
+    padding-top: 20px;
+}
+
+.end-name-group {
+    margin-bottom: 40px;
+}
+
+.end-name-en {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.end-role {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.end-contact-info {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.end-contact-info p {
+    margin-bottom: 4px;
+}
+
+.end-desc p {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}

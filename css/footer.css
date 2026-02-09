@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ephesis&family=Italiana&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Footer Layout */
+.footer_wrap {
+    width: 100%;
+    background-color: #0b1d4e;
+    /* Dark Blue from image */
+    color: #fff;
+    padding: 87px 10%;
+
+    /* Grid Layout for Top Title, Bottom Left/Right */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "title title"
+        "left right";
+
+    position: relative;
+    overflow: hidden;
+    font-family: 'Pretendard', sans-serif;
+    height: 70vh;
+    /* User defined */
+}
+
+/* Title Section (Top) */
+.footer-title {
+    grid-area: title;
+    margin-bottom: 40px;
+}
+
+.footer-title h2 {
+    font-family: 'Noto Serif Display', serif;
+    /* Elegant Serif */
+    font-size: 5rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Left Section (Bottom Left) */
+.footer-left {
+    grid-area: left;
+    align-self: end;
+    /* Align to bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-label {
+    min-width: 40px;
+    font-weight: 300;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.contact-value {
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Right Section (Bottom Right) */
+.footer-right {
+    grid-area: right;
+    align-self: end;
+    /* Align to bottom */
+    justify-self: end;
+    /* Align to right */
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-message {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+    right: 170px;
+    /* Position relative to the image */
+    white-space: nowrap;
+
+    /* Slight tilt like handwriting */
+    z-index: 10;
+}
+
+.footer-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-image {
+    width: 169px;
+    height: auto;
+    display: block;
+
+    /* Bigger size without affecting layout flow */
+    transform: scale(1.5);
+    padding-bottom: 20px;
+
+    position: relative;
+    z-index: 0;
+    /* User asked for z-index control. Text is 10, so this behaves as background/layer */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer_wrap {
+        padding: 60px 5%;
+    }
+
+    .footer-title h2 {
+        font-size: 4rem;
+    }
+
+    .footer-message {
+        font-size: 2.5rem;
+        right: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer_wrap {
+        /* Switch to Flex for mobile vertical stacking */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        gap: 40px;
+        height: auto;
+        /* Allow auto height on mobile */
+    }
+
+    .footer-title {
+        margin-bottom: 20px;
+    }
+
+    .footer-left {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .footer-title h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer-right {
+        width: 100%;
+        align-items: flex-end;
+        flex-direction: column;
+        /* Stack message and image */
+    }
+
+    .footer-message {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        transform: rotate(0);
+        text-align: right;
+    }
+
+    .footer-image {
+        width: 150px;
+    }
+}

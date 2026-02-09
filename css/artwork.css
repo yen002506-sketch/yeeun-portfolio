@@ -1,0 +1,128 @@
+/* Art Works Section Styles */
+.artwork {
+    width: 100%;
+    background-color: #fff;
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    /* Improvements for sharpness and stacking */
+    position: relative;
+    z-index: 10000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Header */
+.art-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+.art-title {
+    font-family: 'Times New Roman', Times, serif;
+    /* Serif font */
+    font-size: 4rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.art-title span {
+    font-style: italic;
+    /* "Works" seems italicized or stylized */
+}
+
+/* Slider Container */
+.art-slider-container {
+    width: 100%;
+    /* Allow scrolling from edge to edge, but centered content initially? 
+       User asked for "slide possible for card part". 
+       Usually implies overflow-x: auto */
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 5%;
+    /* Side padding */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll on mobile */
+    /* Hide scrollbar styles */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.art-slider-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+/* List */
+.art-list {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    /* Allow cards to have different heights */
+    width: max-content;
+    padding: 40px 20px;
+}
+
+/* Card */
+.art-card {
+    position: relative;
+    width: 300px;
+    height: auto;
+    /* Fit to image height */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    /* Add border as requested */
+    border: 0.5px solid rgb(89, 89, 89);
+    box-sizing: border-box;
+}
+
+.art-card img {
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+}
+
+
+/* User requested: "1번카드만 원본 비율 안맞아도되니까 다른 카드들처럼 높이만 맞춰둬" and "4~5번 카드는 절대 지금 상태에서 바꾸지말고" */
+
+.art-card.first img {
+    height: 100%;
+    object-fit: fill;
+    /* Stretch to fill completely, as requested */
+}
+
+/* Hover Effect: Scale Up + Move Up */
+.art-card:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .art-title {
+        font-size: 2.5rem;
+    }
+
+    .art-card {
+        width: 250px;
+
+    }
+
+    .art-list {
+        gap: 20px;
+    }
+}

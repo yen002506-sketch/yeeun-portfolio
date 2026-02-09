@@ -1,0 +1,651 @@
+/* --- About Me Section (Horizontal Scroll) --- */
+.about-me {
+    position: relative;
+    width: 100%;
+    /* Height will be set dynamically via JS usually, or we can set a large default. 
+     But for sticky scroll logic, the container needs height. 
+     Let's initialize with something large, JS will adjust. */
+    height: 900vh;
+    background: #092671;
+    overflow: visible;
+    /* Important for sticky */
+}
+
+/* Viewport */
+.about-me .am-viewport {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Scene */
+.about-me .am-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8500px;
+    /* Width for intro + milestones */
+    height: 100%;
+    will-change: transform;
+    display: flex;
+}
+
+/* Intro Screen */
+.about-me .am-intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.about-me .intro-label {
+    position: absolute;
+    top: 60px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.about-me .intro-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.about-me .intro-content .main-copy {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.about-me .intro-content .desc-copy {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.about-me.in-view .intro-content .main-copy {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.about-me.in-view .intro-content .desc-copy {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.about-me .intro-content .main-copy span.sub {
+    display: block;
+    font-size: 5rem;
+    font-family: 'Noto Serif Display', serif;
+    line-height: 1;
+    color: #fff;
+}
+
+.about-me .intro-content .main-copy .title {
+    font-family: 'Ephesis', cursive;
+    font-size: 8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    line-height: 1;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+
+.about-me .intro-content .desc-copy h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.about-me .intro-content .desc-copy p {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.about-me .intro-visual {
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+
+.about-me .am-intro .whale-arrow {
+    position: absolute;
+
+    top: 50%;
+    left: 70%;
+
+    transform: translate(-50%, -50%);
+
+    width: 5%;
+}
+
+/* Stars */
+/* Stars */
+.about-me .star-deco {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #fff;
+    /* Slightly reduced glowing blur for sharpness */
+    opacity: 0.8;
+    animation: twinkle 3s infinite alternate;
+    z-index: 10;
+}
+
+.about-me .star-deco.yellow {
+    background: #FFD569;
+    /* Soft Gold/Yellow */
+    box-shadow: 0 0 5px #FFD569;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* SVG Styles */
+.about-me .am-new-whale {
+    position: absolute;
+    top: calc(54% + 50px);
+    left: calc(72vw + 60px);
+    /* Match arrow position (68vw) + margin */
+    width: 6500px;
+    height: 600px;
+    transform: translateY(-50%) scaleX(-1);
+    pointer-events: none;
+    z-index: 0;
+    /* Increased z-index for visibility */
+    overflow: visible;
+}
+
+.about-me .am-new-whale-direction-fix {
+    position: absolute;
+    top: calc(54% + 50px);
+    left: calc(72vw + 60px);
+    width: 6500px;
+    height: 500px;
+    transform: translateY(-50%);
+    /* No scaleX(-1) */
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+}
+
+.about-me .am-path-base {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 1;
+}
+
+.about-me .am-path-draw,
+.about-me .am-path-draw2 {
+    filter: drop-shadow(0 0 2px rgba(233, 255, 172, 0.9)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
+}
+
+
+.about-me .arrow-path-draw {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.about-me .am-path-draw,
+.about-me .am-path-draw2 {
+    fill: none;
+    stroke: #ffffff;
+    /* Brighter stroke */
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    z-index: 1;
+}
+
+
+/* Milestones */
+/* Background Decoration */
+.about-me .am-bg {
+    position: absolute;
+    inset: 0;
+    background: url(../img/Pathfinder-about-bg-v2.svg) no-repeat center center;
+    background-size: 100% 100%;
+    z-index: 0;
+}
+
+.about-me .am-milestone {
+    position: absolute;
+    z-index: 10;
+    /* Initial State for Animation */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-me .am-milestone.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-me .am-card {
+    width: 300px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-me .am-milestone.vertical {
+    height: 100vh;
+    top: 0;
+}
+
+.about-me .am-divider-card::before {
+    left: 0%;
+}
+
+.about-me .am-divider-card::after {
+    right: 0;
+}
+
+/* --- Vertical Divider Card (Draw Design) --- */
+.about-me .am-divider-wrap {
+    position: relative;
+    /* absolute면 레이아웃에서 빠짐 */
+    width: 120px;
+    height: 100%;
+}
+
+.about-me .am-img-box {
+    width: 100%;
+    height: 200px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.about-me .am-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.about-me .am-img-box img.img-top {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 50%;
+}
+
+
+.about-me .am-card:hover .am-img-box img {
+    transform: scale(1.05);
+}
+
+.about-me .am-txt h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #A8C5FF;
+}
+
+.about-me .am-txt p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* --- Specific Card Styling: Exhibition (Card 1) --- */
+/* --- Specific Card Styling: Exhibition (New Layout) --- */
+.about-me .am-exhibition-content {
+    position: relative;
+    width: 900px;
+    height: 700px;
+    /* User snippet images go down to 465+175 ~ 640px */
+    display: grid;
+    grid-template-columns: 1.05fr 1.15fr;
+
+    padding: 30px 100px;
+    /* Adjusted from 90px since we position the milestone itself */
+    align-items: center;
+
+}
+
+.about-me .am-exhibition-content.one {
+    margin: 172px 105px;
+}
+
+.about-me .am-exhibition-content.two {
+    /* margin: 150px 105px; */
+    width: 300px;
+    height: 900px;
+}
+
+.about-me .am-exhibition-content.three {
+    width: 300px;
+    height: 900px;
+    z-index: -5;
+}
+
+.about-me .am-exhibition-content.four {
+    margin: 150px 105px;
+    width: 300px;
+    height: 900px;
+}
+
+
+/* Left Image Group */
+.about-me .am-left {
+    position: relative;
+    height: 100%;
+}
+
+.about-me .am-left.three {
+    margin-top: 10px;
+    width: 70%;
+    object-fit: cover;
+}
+
+
+
+
+.about-me .am-img-big {
+    position: absolute;
+    left: 0;
+    /* Relative to .am-left. User said 90px but in full page context? Let's try 0 or small offset */
+    top: 50px;
+    /* Adjusted from 255px to fit inside our milestone box */
+    width: 280px;
+    height: 270px;
+    border-radius: 16px;
+    /* var(--card-radius) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* var(--shadow) */
+    overflow: hidden;
+    z-index: 2;
+}
+
+.about-me .am-img-big img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Big Image Silhouette Effect */
+.about-me .am-img-big::after {
+    content: "";
+    position: absolute;
+    left: 105px;
+    bottom: -10px;
+    width: 90px;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 40px 40px 18px 18px;
+    filter: blur(0.2px);
+    opacity: 0.75;
+    pointer-events: none;
+    /* This effect might look weird if the image itself isn't matching the silhouette context,
+       but implementing as requested. */
+    display: none;
+    /* Hiding for now unless user strictly wants the silhouette overlay on top of their photo */
+}
+
+.about-me .am-img-small {
+    position: absolute;
+    left: -143px;
+    /* Shifted left relative to big image to create the layout look */
+    top: 234px;
+    /* Positioned below big image overlap */
+    width: 193px;
+    height: 201px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 3;
+}
+
+.about-me .am-img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Text Block */
+.about-me .am-right {
+    max-width: 430px;
+    margin-left: 1px;
+    margin-top: 270px;
+    text-align: left;
+}
+
+.about-me .am-right1 {
+    position: absolute;
+    left: 280px;
+    top: 60px;
+    background: #092671;
+    padding: 0 40px;
+}
+
+.about-me .am-right.two {
+    width: 900px;
+    left: 130px;
+    top: 200px;
+    background: #092671;
+    padding: 0 10px;
+    margin-bottom: 372px;
+}
+
+.about-me .am-right.three {
+    width: 900px;
+    left: 130px;
+    top: 200px;
+    padding: 0 20px;
+    margin-top: 10px;
+    background: #092671;
+    margin-bottom: 642px;
+}
+
+.about-me .am-right.four {
+    width: 900px;
+    left: 100px;
+    top: 200px;
+    padding: 0 30px;
+    margin-top: 10px;
+    margin-bottom: 642px;
+    background: #092671;
+}
+
+.about-me .am-right.four .am-title {
+    margin-bottom: 20px;
+}
+
+.about-me .am-right.text-first {
+    width: 900px;
+    height: 900px;
+    left: 180px;
+    top: 200px;
+    padding: 0 30px;
+    transform: translate(250px, -240px);
+}
+
+.about-me .am-right.text-first .am-title {
+    margin-bottom: 20px;
+}
+
+
+.about-me .am-kicker {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    /* var(--text-sub) */
+    margin: 10px 0 16px;
+    font-weight: 300;
+    font-family: 'Noto serif display', sans-serif;
+}
+
+.about-me .am-title {
+    font-size: 34px;
+    line-height: 1.22;
+    margin: 0 0 50px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-family: 'Pretendard', sans-serif;
+
+    /* Ensuring sleek font */
+}
+
+.about-me .am-desc {
+    font-size: 16px;
+    /* Slightly bumped for readability */
+    line-height: 1.55;
+    margin: 0;
+    color: #e7e7e7;
+    max-width: 360px;
+    letter-spacing: -1px;
+    word-break: keep-all;
+    font-weight: 300;
+}
+
+/* --- Added for Card 2 Layout --- */
+.about-me .am-img-landscape {
+    position: absolute;
+    left: 0;
+    top: 27px;
+    width: 365px;
+    height: 226px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.about-me .am-img-landscape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-me .am-img-portrait {
+    position: absolute;
+    left: 282px;
+    /* Overlap or adjacent */
+    top: 160px;
+    width: 225px;
+    height: 142px;
+    overflow: hidden;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.about-me .am-img-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-me .am-img-single-vertical {
+    position: relative;
+    width: 180px;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-me .am-img-single-vertical img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.about-me .am-divider-card {
+    position: absolute;
+    inset: 0;
+    background: #092671;
+    overflow: hidden;
+
+    /* Optional slight radius */
+}
+
+/* Vertical Lines */
+.about-me .am-divider-card::before,
+.about-me .am-divider-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #fff;
+    pointer-events: none;
+}
+
+
+
+/* Rotated Text */
+.about-me .am-d-title {
+    position: absolute;
+    left: calc((37.1% + 72.2%) / 2);
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    color: #fff;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 200;
+    white-space: nowrap;
+    line-height: 1;
+    text-shadow: 0 0 0 transparent;
+}
+
+.about-me .am-d-title .main {
+    font-size: 76px;
+    letter-spacing: 6.9px;
+}
+
+.about-me .am-d-title .sub {
+    font-size: 68px;
+    margin-right: 20%;
+    opacity: 0.95;
+    position: absolute;
+    right: 100%;
+}
