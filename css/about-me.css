@@ -59,7 +59,7 @@
 
 .about-me .intro-content {
     position: absolute;
-    left: 10%;
+    left: 7%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
@@ -153,7 +153,7 @@
 
 .about-me .intro-visual {
     position: absolute;
-    left: 55%;
+    left: 58%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 15%;
