@@ -155,7 +155,7 @@
             </div>
           </div>
 
-          <div class="wm-bottom-line"></div>
+        
         </div>
       </div>
     </section>
@@ -518,6 +518,11 @@
                 xlink:href="#linear-gradient" />
               <linearGradient id="linear-gradient-6" x1="877.09" y1="245.84" x2="877.09" y2="718.35"
                 xlink:href="#linear-gradient" />
+              <!-- Guide Gradient (White to #e0e0e0) -->
+              <linearGradient id="guide-gradient" x1="0" y1="240" x2="0" y2="712" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff" />
+                <stop offset="1" stop-color="#e0e0e0" />
+              </linearGradient>
             </defs>
             <!-- Guide Lines (Static Background) -->
             <path class="skill-line-guide" d="M1255,240.26S1079.63,477,1078.63,712.18"
@@ -592,9 +597,9 @@
       <!-- Content Overlay -->
       <div class="sw-content-overlay">
         <!-- Vertical Line Container -->
-        <div class="sw-line-area">
+        <!-- <div class="sw-line-area">
           <div class="sw-line"></div>
-        </div>
+        </div> -->
 
         <!-- Whale SVG Container -->
         <div class="sw-whale-area">
@@ -635,9 +640,10 @@
     </section>
 
     <section class="project" id="project">
-      <div class="project-header"></div>
-      <h2 class="project-title">UIUX Design</h2>
-      <p class="project-subtitle">제안 및 웹 프로젝트를 통해 사용자 니즈를 분석하고, 이에 맞는 런칭 중심의 디자인을 설계/제작했습니다.</p>
+      <div class="project-header">
+        <h2 class="project-title">UIUX Design</h2>
+        <p class="project-subtitle">제안 및 웹 프로젝트를 통해 사용자 니즈를 분석하고, 이에 맞는 런칭 중심의 디자인을 설계/제작했습니다.</p>
+      </div>
 
       <div class="project-list">
         <!-- Project 1 -->
@@ -689,28 +695,30 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="project-card">
-          <div class="card-info">
-            <span class="card-tag">Personal Project 1</span>
-            <h3 class="card-title">Wini</h3>
-            <span class="card-sub">Wishlist App</span>
-            <p class="card-desc">
-              Wini Wishlist App Service<br>
-              Personal Project<br>
-              Mobile Design<br>
-              2025
-            </p>
-          </div>
-          <a href="https://tubi-nova.vercel.app/" target="_blank" class="card-image-wrap">
-            <img src="img/project3.png" alt="Wini Wishlist App" class="project-img">
-            <div class="project-overlay">
-              <span class="view-text">View</span>
-              <svg class="arrow-icon" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+        <div class="last-card-track">
+          <article class="project-card">
+            <div class="card-info">
+              <span class="card-tag">Personal Project 1</span>
+              <h3 class="card-title">Wini</h3>
+              <span class="card-sub">Wishlist App</span>
+              <p class="card-desc">
+                Wini Wishlist App Service<br>
+                Personal Project<br>
+                Mobile Design<br>
+                2025
+              </p>
             </div>
-          </a>
-        </article>
+            <a href="https://tubi-nova.vercel.app/" target="_blank" class="card-image-wrap">
+              <img src="img/project3.png" alt="Wini Wishlist App" class="project-img">
+              <div class="project-overlay">
+                <span class="view-text">View</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -818,6 +826,12 @@
           </li>
           <li class="art-card">
             <img src="img/artwork5.png" alt="Artwork 5">
+          </li>
+          <li class="art-card">
+            <img src="img/artwork6.png" alt="Artwork 6">
+          </li>
+          <li class="art-card">
+            <img src="img/artwork7.png" alt="Artwork 7">
           </li>
         </ul>
       </div>

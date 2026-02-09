@@ -42,40 +42,39 @@
     /* Adjust to place under 'ma project' text */
 }
 
-/* Vertical Line Top */
+/* Vertical Line Top
 .sw-line-area {
     position: relative;
     width: 1px;
-    height: 85vh;
+    height: 85vh; */
     /* Increased further per request (50vh -> 75vh) */
-    overflow: hidden;
+    /* overflow: hidden;
     z-index: 2;
     margin-bottom: 0;
-}
+} */
 
-.sw-line {
+/* .sw-line {
     width: 100%;
     height: 100%;
     background-color: #fff;
     transform: translateY(-20%);
     transition: transform 0.1s linear;
-}
+} */
 
 /* Whale SVG Area */
 .sw-whale-area {
     position: relative;
-    width: 40vw;
+    width: 54vw;
     /* Increased by 2.5x (20vw -> 50vw) */
-    max-width: 750px;
-    min-width: 500px;
     z-index: 2;
-    opacity: 0;
     transition: opacity 0.5s ease;
-    top: 15%;
+    top: 37%;
     transform: rotate(90deg);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 4%;
+
 }
 
 .sw-whale-area.show {

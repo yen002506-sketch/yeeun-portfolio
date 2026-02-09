@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.style.pointerEvents = 'none';
     overlay.style.background = '#fff';
     overlay.style.opacity = '0';
-    overlay.style.transition = 'opacity .12s linear';
+    overlay.style.transition = 'opacity .05s linear';
   }
 
   // Initialize line length
@@ -43,8 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let progress = scrolled / (scrollableDistance || 1);
     progress = clamp(progress, 0, 1);
 
-    // Draw Line
-    introLinePath.style.strokeDashoffset = lineLen * (1 - progress);
+    // Draw Line (Start after 15% scroll)
+    const lineProgress = clamp((progress - 0.15) / 0.85, 0, 1);
+    introLinePath.style.strokeDashoffset = lineLen * (1 - lineProgress);
 
     // Trigger Text
     if (textTop) textTop.classList.toggle('active', progress > 0.2);
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // White Overlay (0.85~1.0)
     if (overlay) {
-      const o = clamp((progress - 0.95) / 0.06, 0, 1);
+      const o = clamp((progress - 0.95) / 0.05, 0, 1);
       overlay.style.opacity = String(o);
     }
 
@@ -87,4 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+
+  // --- Profile Animation Observer ---
+  const endContentWrap = document.querySelector('.end-content-wrap');
+  if (endContentWrap) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          endContentWrap.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.3 // Trigger when 30% visible
+    });
+    observer.observe(endContentWrap);
+  }
 });

@@ -33,16 +33,14 @@
 /* Title */
 .skill-title {
     font-family: 'Noto Serif Display', serif;
-    font-size: clamp(3rem, 5vw, 5rem);
+    font-size:5rem;
     /* Responsive font size */
     font-weight: 700;
     text-transform: uppercase;
     color: #555;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     /* Relative margin */
     letter-spacing: 2px;
-
-    margin-bottom: 100px;
 
     /* Animation Init */
     opacity: 0;
@@ -147,8 +145,8 @@
 }
 
 .skill-line-guide {
-    stroke: #e0e0e0;
-    /* Light gray guide */
+    stroke: url(#guide-gradient);
+    /* Gradient guide */
     stroke-width: 1px;
     fill: none;
     opacity: 0.5;

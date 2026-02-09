@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Calculate progress
         // Start animation earlier (when top hits 70% viewport)
-        const startY = viewportHeight * 0.7;
+        const startY = viewportHeight * 0.6;
         // End animation when it scrolls past
-        const endY = -viewportHeight * 1.1;
+        const endY = -viewportHeight * 1.2;
 
         // Total Scroll Progress for this section
         let globalProgress = (startY - rect.top) / (startY - endY);

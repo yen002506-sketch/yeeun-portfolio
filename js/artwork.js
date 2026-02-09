@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
+            startX = e.pageX; // Use pageX directly
             scrollLeft = slider.scrollLeft;
+            
+            // Prevent default drag behavior if clicking on images
+            e.preventDefault(); 
         });
 
         slider.addEventListener('mouseleave', () => {
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
+            const x = e.pageX;
             const walk = (x - startX) * 2; // Scroll-fast
             slider.scrollLeft = scrollLeft - walk;
         });

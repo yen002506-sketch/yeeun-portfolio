@@ -30,7 +30,7 @@
     z-index: 9999;
     /* Highest in sticky container */
     pointer-events: none;
-    transition: opacity .95s ease;
+    transition: opacity .15s ease;
     /* Smooth but responsive */
 }
 
@@ -176,7 +176,17 @@
     width: 100%;
 }
 
+.end-profile-frame {
+    /* Initial State: Hidden & Moved Left */
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
 
+.end-content-wrap.active .end-profile-frame {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 .end-profile-img {
     width: 100%;
@@ -217,6 +227,16 @@
     flex: 1;
     max-width: 600px;
     padding-top: 20px;
+    
+    /* Initial State: Hidden & Moved Right */
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+.end-content-wrap.active .end-text-info {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .end-name-group {
