@@ -33,7 +33,7 @@
 /* Title */
 .skill-title {
     font-family: 'Noto Serif Display', serif;
-    font-size:5rem;
+    font-size: 5rem;
     /* Responsive font size */
     font-weight: 700;
     text-transform: uppercase;
@@ -135,7 +135,7 @@
     stroke-dashoffset: 1400;
     /* Move continuously */
     animation: activeLineFlow 3s linear infinite;
-    opacity: 0.5; 
+    opacity: 0.5;
 }
 
 @keyframes activeLineFlow {
@@ -155,24 +155,24 @@
 /* Convergence Circle */
 .skill-center-circle {
     position: absolute;
-    bottom: 10%;
+    bottom: 6%;
     /* Align with bottom of lines */
     left: 50%;
     transform: translateX(-50%) scale(0);
     width: 50px;
     height: 50px;
-    
+
     /* Rainbow Background */
-    background: linear-gradient(124deg, #4c0cc4, #4a69f3, #a3a4e6, #a4b5eb, #dda4d3, #7c8add, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(124deg, #4c0cc4, #4a69f3, #a3a4e6, #a4b5eb, #a084ce, #7c8add, #2b1de8, #771897, #dd00f3);
     background-size: 400% 400%;
-    
+
     border-radius: 50%;
-    z-index: 5;
+    z-index: 3;
     /* Improve visibility over wave */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     /* Glow for visibility */
     transition: transform 0.3s ease-out;
-    
+
     /* Continuous Rainbow Animation */
     animation: rainbowMove 12s ease infinite;
 }
@@ -186,9 +186,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -198,50 +200,128 @@
     0% {
         transform: translateX(-56%) scale(1.8);
     }
+
     100% {
         transform: translateX(-56%) scale(2.0);
     }
 }
 
 /* Wave SVG Area */
-.skill-wave-area {
+
+
+
+/* Wave SVG Area - Refactored for Skill Section */
+
+.skill-wave-wrap {
     position: absolute;
-    bottom: -1%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150%;
-    min-width: 1600px;
-    /* 화면보다 넓게 강제 */
-    z-index: 4;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100px;
     overflow: hidden;
+
+    /* Behind circle (z-index 5) */
 }
 
-.skill-wave-svg {
-    width: 110%;
-    /* 움직임 반경 확보를 위해 약간 크게 */
-    height: 100%;
-    display: block;
-    animation: waveFlow 4s ease-in-out infinite;
+/* 움직이는 레이어 */
+.skill-wave-wrap .s-wave.s-wave1 {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left:0 */
+
+    background-image: url("../img/Mask group2.png");
+    background-repeat: repeat-x;
+    background-size: 1920px 100px;
+    animation: skillWaveAnim 10s linear infinite;
+    z-index: 3;
+    opacity: 1;
+    animation-delay: -7s;
+    bottom: -7px;
 }
 
-@keyframes waveFlow {
-    0% {
-        transform: translate(-2%, 0);
+.skill-wave-wrap .s-wave.s-wave2 {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left:0 */
+
+    background-image: url("../img/Mask group2.png");
+    background-repeat: repeat-x;
+    background-size: 1920px 100px;
+    animation: skillWaveAnim 15s linear infinite;
+    z-index: 2;
+    opacity: 0.6;
+    animation-delay: 0s;
+    bottom: 5px;
+}
+
+.skill-wave-wrap .s-wave.s-wave4 {
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left:0 */
+
+    background-image: url("../img/Mask group2.png");
+    background-repeat: repeat-x;
+    background-size: 1920px 100px;
+    animation: skillWaveAnimReverse 30s linear infinite;
+    z-index: 1;
+    opacity: 0.4;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+@keyframes skillWaveAnim {
+    from {
+        background-position-x: 0;
     }
 
-    50% {
-        transform: translate(2%, 15px);
-    }
-
-    100% {
-        transform: translate(-2%, 0);
+    to {
+        background-position-x: 1920px;
     }
 }
 
-/* Responsive adjustments if needed */
+@keyframes skillWaveAnimReverse {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: -1920px;
+    }
+}
+
+
+
+
+/* Tablet & Mobile (Max Width: 1024px) */
 @media (max-width: 1024px) {
-    .skill-lines-area {
-        width: 100%;
-        max-width: 800px;
+    .skill {
+        height: auto;
+        min-height: 130vh;
+        /* Ensure full viewport height */
     }
+
+    .skill-sticky-wrap {
+        padding: 180px 0;
+    }
+
+    .skill-title {
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+
+    .skill-center-circle {
+        display: visible;
+        width: 5%;
+
+    }
+
+    .skill-lines-area {
+        display: visible;
+    }
+
+    .skill-icons-row {
+        gap: 20px;
+    }
+
+
 }

@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
     function onScroll() {
+        if (window.innerWidth <= 1024) return;
+
         const rect = swSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
 

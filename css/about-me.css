@@ -131,7 +131,7 @@
 .about-me .intro-content .desc-copy span {
     font-size: 50px;
     font-family: 'Handel Gothic', sans-serif;
-  
+
 }
 
 
@@ -153,7 +153,7 @@
 
 .about-me .intro-visual {
     position: absolute;
-    left: 58%;
+    left: 53%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 15%;
@@ -673,4 +673,426 @@
     opacity: 0.95;
     position: absolute;
     right: 100%;
+}
+
+
+
+
+
+
+
+/* Tablet & Mobile (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .about-me {
+        height: auto !important;
+        min-height: 100vh;
+        background: #092671;
+        overflow: hidden;
+    }
+
+    .about-me .am-viewport {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        /* Intro (bottom in code) goes to top visually */
+        width: 100%;
+    }
+
+    .about-me .am-scene {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        transform: none !important;
+        align-items: center;
+        margin-top: 100px;
+        /* Empty space before cards start */
+        padding-bottom: 100px;
+    }
+
+    .about-me .am-intro {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        /* Full screen intro */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-me .intro-content {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me .intro-content .desc-copy {
+        margin-top: 20px;
+    }
+
+    .about-me .am-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background-size: cover;
+    }
+
+    /* Disable animation, just vertical stack */
+    .about-me .am-milestone {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        margin: 0 0 100px 0;
+        /* 100px gap */
+        /* Space between cards */
+        width: 90%;
+        max-width: 800px;
+        display: block;
+        height: auto !important;
+        transition: none !important;
+    }
+
+    .about-me .am-milestone.active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .about-me .am-milestone.vertical {
+        display: none !important;
+    }
+
+    /* Hide complex SVGs */
+    .about-me .am-new-whale,
+    .about-me .am-new-whale-direction-fix,
+    .about-me .am-path-base,
+    .about-me .am-path-draw,
+    .about-me .intro-visual,
+    .about-me .am-d-title {
+        display: none !important;
+    }
+
+    /* Reset image positions for vertical stack */
+    .about-me .am-img-landscape,
+    .about-me .am-img-portrait,
+    .about-me .am-img-single-vertical {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .about-me .am-exhibition-content {
+        width: 100%;
+        height: auto;
+        padding: 40px;
+        /* More padding */
+        display: flex;
+        flex-direction: row;
+        /* Row layout for 1024px */
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin: 0 !important;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+    }
+
+    /* Individual control for 2, 3, 4 */
+    .about-me .am-exhibition-content.two {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Card 2: Show only myphoto3.png (am-img-landscape) */
+    .about-me .am-exhibition-content.two .am-img-portrait {
+        display: none !important;
+    }
+
+    .about-me .am-exhibition-content.two .am-img-landscape {
+        display: block !important;
+        width: 100%;
+    }
+
+    .about-me .am-exhibition-content.two .am-img-landscape img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-me .am-exhibition-content.three {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .about-me .am-exhibition-content.four {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .about-me .am-exhibition-content.left-text-layout.collage-layout {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .about-me .am-left,
+    .about-me .am-right {
+        width: 48% !important;
+        /* Split width */
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        margin: 0 !important;
+        transform: none !important;
+        text-align: left;
+        /* Left align text */
+        background: transparent !important;
+        padding: 0 !important;
+    }
+
+    /* Order fix: ensure image is left if HTML order varies? 
+       Usually HTML is Left(Image) then Right(Text), or vice-versa.
+       If HTML is Text-Right, standard flow works. 
+       If any specific card has swapped order in HTML, we might need order property.
+       Let's assume standard flow for now based on "Image Left, Text Right" request.
+    */
+
+    .about-me .am-img-big {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        /* Fill container */
+        margin: 0;
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+    }
+
+    .about-me .am-img-small {
+        display: none;
+    }
+
+    /* Card 5: Murals (Text First in HTML -> Row Reverse to make Image Left) */
+    .about-me .am-exhibition-content.left-text-layout.collage-layout {
+        flex-direction: row-reverse;
+        /* Swap order: Image Left, Text Right */
+        width: 100% !important;
+        height: auto !important;
+        gap: 20px;
+        /* Reduced gap */
+    }
+
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .am-left.collage-box {
+        width: 50% !important;
+        /* Slightly wider for image */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .am-right.text-first {
+        width: 45% !important;
+        /* Adjust text width */
+        margin: 0 !important;
+        height: auto !important;
+        /* Reset height */
+    }
+
+    /* Reset Collage Item Styles */
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .collage-item {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    /* Resize Card 5 Image */
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .collage-item img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        /* Ensure it fits container */
+        display: block;
+    }
+
+    /* Reset specific right classes */
+    .about-me .am-right1,
+    .about-me .am-right.two,
+    .about-me .am-right.three,
+    .about-me .am-right.four,
+    .about-me .am-right.text-first {
+        position: relative;
+        left: auto;
+        top: auto;
+        background: transparent;
+        margin: 0;
+        transform: none;
+    }
+
+    .about-me .am-divider-card {
+        display: none;
+    }
+
+    .about-me .am-intro .main-copy span.sub {
+        font-size: 50px;
+        line-height: normal;
+    }
+
+    .about-me .am-intro .main-copy .title {
+        font-size: 80px;
+        line-height: normal;
+    }
+}
+
+
+
+
+
+/* Mobile Fallback (Max Width: 768px) */
+@media (max-width: 768px) {
+    .about-me .am-milestone {
+        margin: 50px auto;
+    }
+
+    .about-me .am-exhibition-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-me .am-left,
+    .about-me .am-right,
+    .about-me .am-right1,
+    .about-me .am-right.two,
+    .about-me .am-right.three,
+    .about-me .am-right.four {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .about-me .am-img-big {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+}
+
+
+
+
+
+/* 1600 ↓ */
+@media (max-width: 1600px) {
+  .about-me .intro-visual {
+    position: absolute;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+}
+
+/* ⭐ 1440 ↓ (노트북 핵심 구간) */
+@media (max-width: 1440px) {
+.about-me .intro-visual {
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 13%;
+}
+}
+
+/* ⭐ 1280 ↓ (FHD 작은 창 대응) */
+@media (max-width: 1280px) {
+ .about-me .intro-visual {
+    position: absolute;
+    left: 67%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+}
+
+.about-me .am-intro .whale-arrow {
+    position: absolute;
+    top: 50%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+}
+
+.about-me .am-new-whale {
+    position: absolute;
+    top: calc(54% + 50px);
+    left: calc(84vw + 59px);
+    width: 6500px;
+    height: 600px;
+    transform: translateY(-50%) scaleX(-1);
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible
+}
+
+.about-me .am-new-whale-direction-fix {
+    position: absolute;
+    top: calc(54% + 50px);
+    left: calc(84vw + 60px);
+    width: 6500px;
+    height: 500px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+}
+
+/* 1024 ↓ */
+@media (max-width: 1024px) {
+ .about-me .intro-visual {
+    position: absolute;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+}
+
+/* 768 ↓ */
+@media (max-width: 768px) {
+    .about-me .intro-visual {
+    position: absolute;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+}
+
+
+
+
+
+
+/* Mobile (Max Width: 390px) */
+@media (max-width: 390px) {
+    .about-me .am-intro .main-copy span.sub {
+        font-size: 40px;
+    }
+
+    .about-me .am-intro .main-copy .title {
+        font-size: 60px;
+    }
 }

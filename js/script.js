@@ -178,8 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
 
+      // Disable on mobile/tablet
+      if (window.innerWidth <= 1024) return;
+
       // Trigger Range
-      const start = sectionTop;
+      // start: Start animation when section is entering viewport (e.g., halfway up)
+      const start = sectionTop - windowHeight * 0.5;
       const end = sectionTop + sectionHeight - windowHeight; // Stop pinning/animating when bottom reached
 
       let progress = (scrollY - start) / (end - start);
@@ -187,28 +191,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (progress > 1) progress = 1;
 
       // Sequence:
-      // 0.0 - 0.25: Line Draw (Right side)
-      // 0.25 - 0.85: Whale Draw (Center)
-      // 0.85 - 1.0: Text Reveal
+      // 0.0 - 0.75: Whale Draw (Center)
+      // 0.75 - 1.0: Text Reveal
 
-      // 1. Line (0% -> 25%)
+      // 1. Line (REMOVED / Skipped)
       if (linePath) {
-        let p1 = progress / 0.25;
-        if (p1 > 1) p1 = 1;
-        if (p1 < 0) p1 = 0;
-        linePath.style.strokeDashoffset = lineLen * (1 - p1);
+        // Keeps line hidden or fully drawn effectively ignored since it's commented out in HTML
+        linePath.style.strokeDashoffset = 0;
       }
 
-      // 2. Whale (25% -> 85%) -> Range 0.6
+      // 2. Whale (0% -> 75%) -> Range 0.75
       if (whalePath) {
-        let p2 = (progress - 0.25) / 0.6;
+        let p2 = progress / 0.75;
         if (p2 > 1) p2 = 1;
         if (p2 < 0) p2 = 0;
         whalePath.style.strokeDashoffset = whaleLen * (1 - p2);
       }
 
-      // 3. Text Reveal (85% -> 100%)
-      if (progress > 0.85) {
+      // 3. Text Reveal (75% -> 100%)
+      if (progress > 0.75) {
         textWrap.classList.add('wm-active');
       } else {
         textWrap.classList.remove('wm-active');
@@ -226,6 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionHeight = subWhale.offsetHeight;
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
+
+      // Disable on mobile/tablet
+      if (window.innerWidth <= 1024) return;
 
       // Calculate progress within the section
       // We want the pinning to happen while we scroll through.
@@ -368,6 +372,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... (logic moved to jabout-me.js) ...
   });
   */
+
+  // --- Hamburger Menu Logic ---
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-menu .mo-gnb li a');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+  }
 
 });
 

@@ -9,7 +9,7 @@
   background-size: cover;
   color: #fff;
   z-index: 10;
-  margin-top: -300px;
+
 }
 
 /* Background Transition Overlay */
@@ -64,8 +64,9 @@
 .whale-middle .wm-whale {
   width: 100%;
   /* 1200 * 1.3 */
-  top: 52%;
-  left: 58%;
+  top: 52.5%;
+  left: 58.3%;
+  /* 58% -> 58.3%로 미세 조정하여 라인 맞춤 */
   transform: translate(-50%, -50%);
   /* 중앙 정렬 유지 */
   z-index: 2;
@@ -93,7 +94,7 @@
   left: 3%;
   font-family: 'Noto Serif Display', serif;
   /* 명조체 */
-font-size: 16vw;
+  font-size: 16vw;
   letter-spacing: -3px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.1);
@@ -139,10 +140,13 @@ font-size: 16vw;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
 }
+
 .whale-middle .wm-left p {
   font-size: 16px;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .whale-middle .wm-right {
@@ -229,4 +233,123 @@ font-size: 16vw;
 .sub-whale .innercard ul li.card.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+/* Tablet & Mobile (Max Width: 1024px) */
+@media (max-width: 1024px) {
+
+  /* --- Whale Middle --- */
+  .whale-middle {
+    height: 100vh !important;
+    padding: 50px 0;
+    background-attachment: scroll;
+  }
+
+  .whale-middle .wm-content {
+    position: relative;
+    top: auto;
+    height: auto;
+    display: block;
+    padding: 0 20px;
+  }
+
+  .whale-middle .wm-svg,
+  .whale-middle .wm-line {
+    display: none !important;
+  }
+
+  .whale-middle .wm-text-wrap {
+    position: relative;
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .whale-middle .wm-title-top,
+  .whale-middle .wm-title-bottom,
+  .whale-middle .wm-footer,
+  .whale-middle .wm-bottom-line {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .whale-middle .wm-title-top {
+    font-size: 180px;
+    transform: translateY(0) !important;
+  }
+
+  .whale-middle .wm-title-bottom {
+    font-size: 100px;
+    transform: translateY(0) !important;
+    margin-bottom: 50px;
+  }
+
+  .whale-middle .wm-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-left: 0;
+    transform: translateY(0) !important;
+  }
+
+  .whale-middle .wm-right {
+    text-align: center;
+  }
+
+  /* --- Sub Whale --- */
+  .sub-whale {
+    height: auto !important;
+    padding: 50px 0;
+  }
+
+  .sub-whale .innercard {
+    position: relative;
+    top: auto;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .sub-whale .innercard ul {
+    display: flex;
+    flex-direction: row;
+    /* Changed to row */
+    flex-wrap: wrap;
+    /* Allow wrapping */
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    /* grid-template-columns: 1fr; removed */
+  }
+
+  .sub-whale .innercard ul li.card {
+    opacity: 1 !important;
+    transform: none !important;
+    width: calc(50% - 10px);
+    /* 2 items per row (gap 20px means 10px each side effectively or total gap/2) */
+
+  }
+}
+
+/* Mobile (Max Width: 600px) */
+@media (max-width: 600px) {
+  .sub-whale .innercard ul li.card {
+    width: 100%;
+    /* Back to 1 item per row */
+  }
 }

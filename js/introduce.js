@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let snapped = false;
 
   function onScroll() {
+    // 1024px guard removed here to allow animation
+
     const rect = introSection.getBoundingClientRect();
     const sectionHeight = introSection.offsetHeight;
     const viewportHeight = window.innerHeight;
@@ -61,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ✅ 끝에서: 완전 하얗게 → introduce-end로 이동
+    // 1024px 이하에서는 강제 이동(Snap) 하지 않음 (Animation은 동작하되 스크롤 자유)
     if (!snapped && progress > 0.985) {
-      // GNB 이동 중이면 강제 스크롤 하지 않음, 단 이미 지나간 것으로 처리(snapped=true)하여 나중에 되돌아가지 않게 함
+      // GNB 이동 중이면 강제 스크롤 하지 않음
       if (window.isGnbNavigating) {
         snapped = true;
         return;
@@ -72,10 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (overlay) overlay.style.opacity = '1';
 
-      if (introEndSection) {
-        setTimeout(() => {
-          introEndSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 120);
+      if (window.innerWidth > 1024) { // Only snap on Desktop
+        if (introEndSection) {
+          setTimeout(() => {
+            introEndSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 120);
+        }
       }
     }
 

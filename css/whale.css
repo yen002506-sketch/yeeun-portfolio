@@ -1,14 +1,14 @@
 /* 2번 섹션 */
 
-.whale-line{
-  height: 1536px;         
-  background: linear-gradient(to bottom, #314572 15%, #152349 77%);   
+.whale-line {
+  height: 1536px;
+  background: linear-gradient(to bottom, #314572 15%, #152349 77%);
   overflow: hidden;
   padding-top: 20px;
 }
 
 /* .whale-line parent class added for specificity */
-.whale-line .timeline{
+.whale-line .timeline {
   position: relative;
   max-width: 1200px;
   height: 100%;
@@ -16,50 +16,51 @@
 }
 
 /* 타임라인 트랙 (가운데 선) */
-.whale-line .timeline-line-track{
+.whale-line .timeline-line-track {
   position: absolute;
   left: 50%;
-  top: 120px; /* Star (approx 60px) + Gap from centering */
+  top: 120px;
+  /* Star (approx 60px) + Gap from centering */
   transform: translateX(-50%);
   width: 1.5px;
   height: calc(100%);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* 타임라인 채워지는 선 (JS 제어) */
-.whale-line .timeline-line-fill{
+.whale-line .timeline-line-fill {
   width: 100%;
-  height: 0%; 
+  height: 0%;
   background: #fff;
-  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
   transition: height 0.1s linear;
 }
 
 /* 캡슐 래퍼 */
 
-.whale-line .capsule-wrap{
+.whale-line .capsule-wrap {
   position: relative;
-  z-index: 2; /* 라인 위에 */
+  z-index: 2;
+  /* 라인 위에 */
   height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 섹션 중앙 */
+  justify-content: center;
+  /* 섹션 중앙 */
   /* padding-top 조절? justify-content: center로 일단 중앙 배치 */
 }
 
 .whale-line .capsule-top-star {
   padding-bottom: 80px;
   margin-top: 70px;
-
-  
 }
 
 /* ✅ 캡슐 */
-.whale-line .capsule{
+.whale-line .capsule {
   position: relative;
-  width: 393px;            
-  height: 781px;           
+  width: 393px;
+  height: 781px;
   border-radius: 999px;
   border: 1px solid #fff;
   backdrop-filter: blur(10px);
@@ -71,23 +72,30 @@
   align-items: center;
 }
 
-.whale-line {  display: flex;
+.whale-line {
+  display: flex;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+}
 
-.whale-line .capsule-text{
+.whale-line .capsule-text {
   position: absolute;
   padding-bottom: 30px;
-  
+
 }
 
 /* SVG Text Layer */
 .whale-line .capsule-svg-layer {
   position: absolute;
-  top: -50px; left: -50px; right: -50px; bottom: -50px; /* 넉넉하게 */
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  /* 넉넉하게 */
   pointer-events: none;
   z-index: 10;
 }
+
 /* SVG Text 스타일 */
 .whale-line .capsule-svg-layer text textPath {
   font-family: 'Pretendard', sans-serif;
@@ -97,16 +105,18 @@
 }
 
 /* 캡슐 미디어 영역 */
-.whale-line .capsule-media{
+.whale-line .capsule-media {
   position: absolute;
-  inset: 28px; /* 보더 안쪽 여백 */
+  inset: 28px;
+  /* 보더 안쪽 여백 */
   border-radius: 999px;
   overflow: hidden;
-  z-index: 1; /* 글자 뒤 */
+  z-index: 1;
+  /* 글자 뒤 */
 }
 
 .whale-line .capsule-media img,
-.whale-line .capsule-media video{
+.whale-line .capsule-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -116,10 +126,11 @@
 
 .whale-line .inner-text {
   position: absolute;
-  top: 18%; /* 대략 이미지 위치 */
+  top: 18%;
+  /* 대략 이미지 위치 */
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.5px;
@@ -127,24 +138,41 @@
 }
 
 /* 가운데 문구 pill */
-.whale-line .capsule-label{
+.whale-line .capsule-label {
   position: absolute;
   z-index: 20;
   padding: 26px 100px;
   border-radius: 99px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(2px);
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.5px;
   white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .whale-line .capsule-bottom-arrow {
-  margin-top: 130px;
+  position: absolute;
+  bottom: 100px;
+  /* 섹션 하단에 고정 */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+  /* 기존 마진 제거 */
+  padding-bottom: 20px;
+  /* 약간의 여백 */
+  z-index: 5;
+  /* 라인 위에 */
+}
+
+/* 타임라인 트랙 길이 수정: 화살표랑 겹치지 않게 */
+.whale-line .timeline-line-track {
+  /* top: 120px; 이미 선언되어 있음. height를 줄여야 함 overfolow 방지 */
+  /* 화살표 높이 대략 50px + 여백 20px = 70px 정도 */
+  height: calc(100% - 120px - 60px);
 }
 
 
@@ -152,3 +180,73 @@
 
 
 
+
+/* Tablet & Mobile (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .whale-line {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .whale-line .capsule-top-star {
+    padding-bottom: 30px;
+    margin-top: 120px;
+  }
+
+
+  /* Full width capsule */
+  .whale-line .capsule {
+    width: 800px;
+    height: 100%;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  .whale-line .capsule-media {
+    inset: 0;
+    border: 1px solid #76747f;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  /* Overlay for 1024px */
+  .whale-line .capsule-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 20px;
+  }
+
+  /* Adjust text size */
+  .whale-line .capsule-label {
+    font-size: 16px;
+
+    position: absolute;
+    top: 60%;
+
+
+  }
+
+  /* Hide arrow and timeline */
+  .whale-line .capsule-bottom-arrow,
+  .whale-line .timeline-line-track {
+    display: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .whale-line {
+    height: 50vh;
+  }
+
+  .whale-line .capsule-label {
+    padding: 15px 40px;
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+    white-space: normal;
+  }
+}

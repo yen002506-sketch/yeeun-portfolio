@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
+
 </head>
 
 <body>
@@ -38,6 +39,22 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu">
+        <ul class="mo-gnb">
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </header>
 
     <section class="hero" data-animate="motion">
@@ -60,12 +77,11 @@
       </div>
        -->
 
-       <div class="wavenew">
+      <div class="wavenew">
         <div class="wave wave1"></div>
         <div class="wave wave2"></div>
-      
         <div class="wave wave4"></div>
-       </div>
+      </div>
 
 
 
@@ -108,11 +124,11 @@
               <div class="inner-text">UI/UX goal</div>
             </div>
           </div>
+        </div>
 
-          <!-- 아래 화살표 아이콘 -->
-          <div class="capsule-bottom-arrow">
-            <img src="img/arrow-btn1.png" alt="">
-          </div>
+        <!-- 아래 화살표 아이콘 (Moved out of capsule-wrap) -->
+        <div class="capsule-bottom-arrow">
+          <img src="img/arrow-btn1.png" alt="">
         </div>
       </div>
     </section>
@@ -145,17 +161,19 @@
           <div class="wm-title-bottom">where<br>meaning lives</div>
 
           <div class="wm-footer">
-            <div class="wm-left"><h1>UX - Design - Insight</h1>
-            <p>Meaning lives beneath the surface.<br>
-              True UX is shaped by context, research, and intention.<br>
-              Design begins where insight goes deep.</p></div>
+            <div class="wm-left">
+              <h1>UX - Design - Insight</h1>
+              <p>Meaning lives beneath the surface.<br>
+                True UX is shaped by context, research, and intention.<br>
+                Design begins where insight goes deep.</p>
+            </div>
             <div class="wm-right">
               Beyond visuals, toward understanding <br>
               Every decision has a reason.
             </div>
           </div>
 
-        
+
         </div>
       </div>
     </section>
@@ -567,22 +585,14 @@
         <!-- Convergence Circle -->
         <div class="skill-center-circle"></div>
 
-        <!-- Wave SVG -->
-        <div class="skill-wave-area">
-          <svg class="skill-wave-svg" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1293.81 173.09">
-            <defs>
-              <linearGradient id="wave-gradient" x1="924.98" y1="461.09" x2="924.98" y2="634.18"
-                gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#fff" />
-                <stop offset="1" stop-color="#092671" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M298.75,461.6c33.72.39,97.53.59,104.44,1,65.32,4.08,130.86,15.9,192,39.78C627.28,515,657.1,535.56,691.43,543a708.2,708.2,0,0,0,75.51,11.89c76.33,8,154.41,4.74,228.79-14.9,152.4-40.26,309.26-93.2,468.35-58.64q13.43,2.93,26.65,6.62c151,42.26,45,146.26,45,146.26H278.07V461.09C278.07,461.3,286.39,461.46,298.75,461.6Z"
-              transform="translate(-278.07 -461.09)" fill="url(#wave-gradient)" />
-          </svg>
+
+
+        <div class="skill-wave-wrap">
+          <div class="s-wave s-wave1"></div>
+          <div class="s-wave s-wave2"></div>
+          <div class="s-wave s-wave4"></div>
         </div>
+
 
       </div>
     </section>
@@ -648,15 +658,17 @@
       <div class="project-list">
         <!-- Project 1 -->
         <article class="project-card">
+          <a href="https://www.figma.com/proto/RYTEeLPY1x5oFJmBnqJFcP/K-Brand-3%EC%A1%B0?page-id=2370%3A333&node-id=5149-6782&viewport=-541%2C942%2C0.06&t=1TOPYyGDMDKYb3vm-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2429%3A2110"
+            class="project-proposal p1" target="_blank">proposal</a>
           <div class="card-info">
             <span class="card-tag">TEAM PROJECT 1</span>
             <h3 class="card-title">One million</h3>
             <span class="card-sub">Redesign</span>
             <p class="card-desc">
-              One million Web site<br>
-              RedesignOne million Web site<br>
-              RedesignOne million Web site<br>
-              Redesign
+              One million Website Redesign<br>
+              UX/UI Design Project<br>
+              Responsive Web<br>
+              2025
             </p>
           </div>
           <a href="https://yunjioh.github.io/1million/" target="_blank" class="card-image-wrap">
@@ -672,6 +684,7 @@
 
         <!-- Project 2 -->
         <article class="project-card">
+          <a href="#" class="project-proposal p2" target="_blank">proposal</a>
           <div class="card-info">
             <span class="card-tag">TEAM PROJECT 2</span>
             <h3 class="card-title">NOVA</h3>
@@ -680,7 +693,7 @@
               NOVA Fandom App Service<br>
               UX/UI Design Project<br>
               Mobile Application<br>
-              2024
+              2025
             </p>
           </div>
           <a href="https://tubi-nova.vercel.app/" target="_blank" class="card-image-wrap">
@@ -697,6 +710,7 @@
         <!-- Project 3 -->
         <div class="last-card-track">
           <article class="project-card">
+            <a href="#" class="project-proposal p3" target="_blank">proposal</a>
             <div class="card-info">
               <span class="card-tag">Personal Project 1</span>
               <h3 class="card-title">Wini</h3>
@@ -731,7 +745,7 @@
 
       <div class="clone-list">
         <!-- Item 1 -->
-        <div class="clone-item item-1">
+        <a href="https://crew-a-la-mode.vercel.app" target="_blank" class="clone-item item-1">
           <div class="clone-content-default">
             <img src="img/clonesmall1.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Crew a la mode</span>
@@ -740,10 +754,10 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Crew a la mode</span>
           </div>
-        </div>
+        </a>
 
         <!-- Item 2 -->
-        <div class="clone-item item-2">
+        <a href="https://musign-theta.vercel.app" target="_blank" class="clone-item item-2">
           <div class="clone-content-default">
             <img src="img/clonesmall2.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Musign</span>
@@ -752,10 +766,10 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Musign</span>
           </div>
-        </div>
+        </a>
 
         <!-- Item 3 -->
-        <div class="clone-item item-3">
+        <a href="https://ystudio-vet5.vercel.app" target="_blank" class="clone-item item-3">
           <div class="clone-content-default">
             <img src="img/clonesmall3.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Ystudio</span>
@@ -764,10 +778,10 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Ystudio</span>
           </div>
-        </div>
+        </a>
 
         <!-- Item 4 -->
-        <div class="clone-item item-4">
+        <a href="https://concierge-iota.vercel.app" target="_blank" class="clone-item item-4">
           <div class="clone-content-default">
             <img src="img/clonesmall4.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Concierge</span>
@@ -776,10 +790,10 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Concierge</span>
           </div>
-        </div>
+        </a>
 
         <!-- Item 5 -->
-        <div class="clone-item item-5">
+        <a href="https://phomein.vercel.app" target="_blank" class="clone-item item-5">
           <div class="clone-content-default">
             <img src="img/clonesmall5.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Phomein</span>
@@ -788,10 +802,10 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Phomein</span>
           </div>
-        </div>
+        </a>
 
         <!-- Item 6 -->
-        <div class="clone-item item-6">
+        <a href="https://daebang-n2hj.vercel.app" target="_blank" class="clone-item item-6">
           <div class="clone-content-default">
             <img src="img/clonesmall6.png" alt="Icon" class="clone-small-img">
             <span class="clone-text-default">Daebang</span>
@@ -800,13 +814,13 @@
           <div class="clone-content-hover">
             <span class="clone-text-hover">Daebang</span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section class="artwork">
       <div class="art-header">
-      
+
         <h2 class="art-title">Art <span>Works</span></h2>
       </div>
 

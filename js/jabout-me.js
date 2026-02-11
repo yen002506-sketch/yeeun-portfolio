@@ -49,6 +49,15 @@ let amState = { startY: 0, endY: 0, shift: 0, introHold: 0 };
 
 function initAboutMe() {
     if (!aboutMeSection) return;
+
+    // Disable horizontal scroll setup on mobile/tablet
+    if (window.innerWidth <= 1024) {
+        aboutMeSection.style.height = 'auto'; // Reset height
+
+        // Mobile: Just reset height, no animation observer needed
+        return;
+    }
+
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 

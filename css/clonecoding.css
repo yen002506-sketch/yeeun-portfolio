@@ -43,6 +43,8 @@
 
 /* List Item */
 .clone-item {
+    text-decoration: none;
+    color: inherit;
     position: relative;
     width: 100%;
     height: 120px;
@@ -147,6 +149,7 @@
     background: #333;
     transform-origin: bottom right;
 }
+
 .clone-arrow::before {
     content: '';
     position: absolute;

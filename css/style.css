@@ -144,11 +144,11 @@ img {
 }
 
 .title.en {
-  
+
   font-weight: normal;
   font-family: "Noto Serif Display", serif;
   font-size: 20px;
-  color: #edebf3 ;
+  color: #edebf3;
 }
 
 .gnb {
@@ -257,7 +257,7 @@ img {
   align-items: center;
   font-size: 14px;
   letter-spacing: 0.5px;
-  margin-top: 226px;
+  margin-top: 200px;
   cursor: pointer;
   width: fit-content;
   gap: 14px;
@@ -315,10 +315,11 @@ img {
   max-width: 1400px;
   height: auto;
   margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 
-.wavenew{
+.wavenew {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -328,57 +329,71 @@ img {
 }
 
 /* 움직이는 레이어 */
-.wavenew .wave.wave1{
+.wavenew .wave.wave1 {
   position: absolute;
-  inset: 0;               /* top/right/bottom/left:0 */
+  inset: 0;
+  /* top/right/bottom/left:0 */
 
   background-image: url("../img/Mask group.png");
-  background-repeat: repeat-x;      
+  background-repeat: repeat-x;
   background-size: 1920px 100px;
-  animation: animate 30s linear infinite;
+  animation: animate 10s linear infinite;
   z-index: 1000;
-  opacity: 0.7;
-  animation-delay: 0s;
-  bottom: 0;
+  opacity: 1;
+  animation-delay: -7s;
+  bottom: -7px;
 }
 
-.wavenew .wave.wave2{
+.wavenew .wave.wave2 {
   position: absolute;
-  inset: 0;               /* top/right/bottom/left:0 */
+  inset: 0;
+  /* top/right/bottom/left:0 */
 
   background-image: url("../img/Mask group.png");
-  background-repeat: repeat-x;     
+  background-repeat: repeat-x;
   background-size: 1920px 100px;
   animation: animate 15s linear infinite;
   z-index: 999;
-  opacity: 0.5;
-  animation-delay: -5s;
+  opacity: 0.6;
+  animation-delay: 0s;
   bottom: 5px;
 }
 
 
 
-.wavenew .wave.wave4{
+.wavenew .wave.wave4 {
   position: absolute;
-  inset: 0;               /* top/right/bottom/left:0 */
+  inset: 0;
+  /* top/right/bottom/left:0 */
 
   background-image: url("../img/Mask group.png");
-  background-repeat: repeat-x;      
+  background-repeat: repeat-x;
   background-size: 1920px 100px;
   animation: animate2 30s linear infinite;
   z-index: 997;
-  opacity: 0.3;
+  opacity: 0.4;
   animation-delay: -2s;
   bottom: 15px;
 }
 
-@keyframes animate{
-  from { background-position-x: 0; }
-  to   { background-position-x: 1920px; }
+@keyframes animate {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 1920px;
+  }
 }
-@keyframes animate2{
-  from { background-position-x: 0; }
-  to   { background-position-x: -1920px; }
+
+@keyframes animate2 {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: -1920px;
+  }
 }
 
 .wave-wrap {
@@ -475,4 +490,130 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Tablet & Mobile (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero {
+    height: 100vh;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 2000;
+  /* Above mobile menu */
+  margin-left: auto;
+  /* Push to right */
+  background: transparent;
+  border: none;
+  margin-right: -20px;
+  /* Align with previous GNB position relative to padding? */
+  /* Wait, GNB ul had margin-right: 80px. 
+       .header has padding: 0 20px.
+       If I want it to be "where the GNB was", GNB was ~100px from right edge.
+       Let's try margin-right: 80px to match .gnb ul margin. */
+  margin-right: 50px;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Active State (X shape) */
+.hamburger.active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* Mobile Menu Container */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  /* Hidden by default */
+  width: 250px;
+  /* Adjust width as needed */
+  height: 100vh;
+  background: rgba(13, 28, 60, 0.40);
+  /* Dark blue background */
+  backdrop-filter: blur(10px);
+  z-index: 1500;
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .mo-gnb {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+.mobile-menu .mo-gnb li a {
+  color: #fff;
+  font-family: "Noto Serif Display", serif;
+  font-size: 24px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s;
+}
+
+.mobile-menu .mo-gnb li a:hover {
+  color: #abc3f8;
+}
+
+/* Response for Hamburger (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .gnb {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

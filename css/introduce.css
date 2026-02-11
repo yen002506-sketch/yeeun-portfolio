@@ -151,7 +151,7 @@
     /* Adjust based on viewport */
     font-weight: 900;
     text-transform: uppercase;
-    font-family: 'Pretendard',sans-serif;
+    font-family: 'Pretendard', sans-serif;
     /* or similar bold sans */
     margin-bottom: 80px;
 
@@ -227,7 +227,7 @@
     flex: 1;
     max-width: 600px;
     padding-top: 20px;
-    
+
     /* Initial State: Hidden & Moved Right */
     opacity: 0;
     transform: translateX(100px);
@@ -273,7 +273,7 @@
 
 .end-contact-info p {
     margin-bottom: 4px;
-   
+
 }
 
 .end-desc p {
@@ -284,4 +284,51 @@
     color: #444;
     margin-bottom: 30px;
     word-break: keep-all;
+}
+
+/* 1024px Responsive */
+@media (max-width: 1024px) {
+    .introduce {
+        height: 200vh;
+        /* Reduced height for tablet but allows scroll */
+        min-height: auto;
+    }
+
+    .introduce .intro-sticky-wrap {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .introduce .intro-text-group {
+        /* Maintain default absolute positioning for animation */
+        position: absolute;
+        margin: 0;
+    }
+
+    /* Restore elements */
+    .introduce .intro-line-svg,
+    .introduce .intro-white-overlay {
+        display: block;
+    }
+
+    .introduce .intro-star-end {
+        /* Restore absolute positioning */
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        top: auto;
+        transform: translateX(-50%) scale(0);
+        margin-top: 0;
+    }
+
+    .introduce .intro-star-end.active {
+        transform: translateX(-50%) scale(1);
+    }
 }

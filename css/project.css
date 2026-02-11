@@ -36,7 +36,7 @@
     font-weight: 700;
     margin-bottom: 2vh;
     color: #555;
-    
+
 }
 
 .project-subtitle {
@@ -49,7 +49,10 @@
 
 /* List & Card */
 .project-list {
-    width: 100%;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 1400px;
     padding: 0 5% 200px 5%;
     /* Reduced padding */
@@ -73,12 +76,15 @@
 
 .last-card-track .project-card {
     /* Ensure it behaves sticky within the track */
-    top: 250px; /* Offset for header */
-    z-index: 9999; /* Go above EVERYTHING including header */
+    top: 250px;
+    /* Offset for header */
+    z-index: 9999;
+    /* Go above EVERYTHING including header */
 }
 
 .project-card {
     width: 100%;
+
     background: #fff;
     border: 1px solid #9c9c9c;
     border-radius: 20px;
@@ -95,6 +101,64 @@
     /* Base z-index */
     box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.03);
     /* Shadow on top to distinguish */
+}
+
+.project-proposal {
+    position: absolute;
+    top: 60px;
+    right: -50px;
+    /* Buckle out slightly or align flush */
+    color: #fff;
+    padding: 10px 40px 10px 30px;
+    /* More padding on right for cut */
+    font-size: 1rem;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    text-transform: lowercase;
+    text-decoration: none;
+    z-index: 10;
+
+    /* Fishtail Ribbon Shape */
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 15px) 50%, 100% 100%, 0% 100%);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    /* Shadow follows shape */
+
+    transition: transform 0.2s ease;
+}
+
+/* Arrow Icon */
+.project-proposal::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+/* Specific Colors */
+.project-proposal.p1 {
+    background: #da1919;
+    /* Red */
+}
+
+.project-proposal.p2 {
+    background: #7e43ec;
+    /* Purple */
+}
+
+.project-proposal.p3 {
+    background: #1051f5;
+    /* Blue (Default) */
+}
+
+.project-proposal:hover {
+    transform: translateX(5px);
+    /* Move button right */
+}
+
+.project-proposal:hover::after {
+    transform: translateX(3px);
+    /* Arrow moves slightly more right */
 }
 
 /* Ensure subsequent cards sit on top when stacked */
@@ -161,17 +225,18 @@
 .card-sub {
     font-size: 1.5rem;
     color: #939393;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-weight: 500;
     padding-left: 5px;
+
     /* Slightly bolder */
 }
 
 .card-desc {
-    font-size: 1rem;
-    color: #111;
+    font-size: 0.9rem;
+    color: #4f4f4f;
     /* Almost black */
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: 500;
     /* Increased weight */
 }
@@ -259,5 +324,62 @@
 
     .card-image-wrap {
         width: 100%;
+    }
+}
+
+/* Tablet & Mobile (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .project-list {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 50px;
+        align-items: center;
+    }
+
+    .project-card,
+    .project-card:nth-child(n) {
+        position: relative;
+        top: auto !important;
+        z-index: 1 !important;
+        margin-bottom: 30px;
+        width: 100%;
+        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .last-card-track {
+        height: auto;
+        display: block;
+    }
+
+    .last-card-track .project-card {
+        top: auto !important;
+    }
+
+    .card-info {
+        flex: auto;
+        width: 100%;
+    }
+
+    .card-image-wrap {
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+    .project-title {
+        font-size: 3rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        padding: 20px;
     }
 }
