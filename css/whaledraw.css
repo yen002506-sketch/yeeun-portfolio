@@ -129,7 +129,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: all 1s ease-out 0.5s;
-  margin-left: 60%
+  margin-left: 56%
 }
 
 .whale-middle .wm-left h1 {
@@ -232,7 +232,11 @@
 }
 
 
-
+@media (max-width: 1440px){
+  .whale-middle .wm-footer {
+    margin-left: 58%;
+  }
+}
 
  
 
