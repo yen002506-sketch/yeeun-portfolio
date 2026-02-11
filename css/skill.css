@@ -322,6 +322,29 @@
     .skill-icons-row {
         gap: 20px;
     }
+}
+
+@media (max-width: 390px) {
+
+    .skill {
+        height: auto;
+        min-height: 110vh;
+    }
+
+    .skill-icons-row {
+        gap: 50px 25px !important; /* Increase vertical gap significantly, reduce horizontal if needed */
+        margin-top: 20px;
+    }
+
+    .skill-icon-item {
+        width: 65px; /* Fixed size for mobile to ensure fit */
+        height: 65px;
+    }
+    .skill-center-circle {
+        width: 13%;
+    }
 
 
 }
+
+

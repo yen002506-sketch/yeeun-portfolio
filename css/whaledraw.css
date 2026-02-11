@@ -60,17 +60,13 @@
   /* 선 두께 보정 */
 
 
-/* 2번 SVG: 고래 (중앙 배치) */
+/* 2번 SVG: 고래 (상단 고정 - 반응형 대응) */
 .whale-middle .wm-whale {
   width: 100%;
-  /* 1200 * 1.3 */
-  top: 52.5%;
-  left: 58.3%;
-  /* 58% -> 58.3%로 미세 조정하여 라인 맞춤 */
-  transform: translate(-50%, -50%);
-  /* 중앙 정렬 유지 */
+  top: 0;
+  left: 8.25%; /* (Start X / ViewBox Width) offset correction: 50% - ~41.75% = 8.25% */
+  transform: none; /* 중앙 정렬 제거하고 상단 고정 */
   z-index: 2;
-
 }
 
 .whale-middle .draw-path {
@@ -238,6 +234,8 @@
 
 
 
+ 
+
 
 
 
@@ -353,3 +351,21 @@
     /* Back to 1 item per row */
   }
 }
+
+@media (max-width: 390px) {
+
+      .whale-middle {
+        height: 65vh !important;}
+
+      .whale-middle .wm-title-top {
+        font-size: 80px;
+}
+
+.whale-middle .wm-title-bottom {
+        font-size: 60px;}
+
+        .whale-middle .wm-left p {
+    font-size: 13px;}
+
+}
+    

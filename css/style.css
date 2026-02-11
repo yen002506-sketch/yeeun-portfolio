@@ -522,7 +522,7 @@ img {
        .header has padding: 0 20px.
        If I want it to be "where the GNB was", GNB was ~100px from right edge.
        Let's try margin-right: 80px to match .gnb ul margin. */
-  margin-right: 50px;
+  margin-right: 15px;
 }
 
 .hamburger span {
@@ -616,4 +616,44 @@ img {
   .hamburger {
     display: block;
   }
+}
+
+/* Mobile Hero Text (Hidden by default) */
+.hero-mobile-text {
+    display: none;
+    font-family: "Noto Serif Display", serif;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 22px; /* Spacing from logo */
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@media (max-width: 390px) {
+    .hero {
+        height: 100vh;
+    }
+
+    /* Hide Header Title */
+    .header h1 {
+        display: none;
+    }
+
+    /* Hero Title Container Adjustment */
+    .hero .title {
+        position: absolute;
+        bottom: 23.5%;
+        flex-direction: column; /* Stack logo and text */
+        align-items: center;
+    }
+
+    /* Show Hero Mobile Text */
+    .hero-mobile-text {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 14px;
+    }
 }

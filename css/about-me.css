@@ -153,7 +153,7 @@
 
 .about-me .intro-visual {
     position: absolute;
-    left: 53%;
+    left: 58%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 15%;
@@ -992,7 +992,15 @@
 
 
 
-
+@media (max-width: 1700px) {
+  .about-me .intro-visual {
+    position: absolute;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+}
 
 /* 1600 ↓ */
 @media (max-width: 1600px) {
@@ -1007,92 +1015,122 @@
 
 /* ⭐ 1440 ↓ (노트북 핵심 구간) */
 @media (max-width: 1440px) {
-.about-me .intro-visual {
+      .about-me .intro-visual {
     position: absolute;
-    left: 58%;
+    left: 59%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 13%;
-}
-}
+    width: 13%;}
 
-/* ⭐ 1280 ↓ (FHD 작은 창 대응) */
-@media (max-width: 1280px) {
- .about-me .intro-visual {
-    position: absolute;
-    left: 67%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15%;
-}
-}
-
-.about-me .am-intro .whale-arrow {
+    .about-me .am-intro .whale-arrow {
     position: absolute;
     top: 50%;
-    left: 82%;
+    left: 72%;
     transform: translate(-50%, -50%);
     width: 5%;
 }
 
-.about-me .am-new-whale {
-    position: absolute;
-    top: calc(54% + 50px);
-    left: calc(84vw + 59px);
-    width: 6500px;
-    height: 600px;
-    transform: translateY(-50%) scaleX(-1);
-    pointer-events: none;
-    z-index: 0;
-    overflow: visible
-}
+.about-me .intro-content .main-copy span.sub {
+    display: block;
+    font-size: 88px;}
 
-.about-me .am-new-whale-direction-fix {
-    position: absolute;
-    top: calc(54% + 50px);
-    left: calc(84vw + 60px);
-    width: 6500px;
-    height: 500px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    z-index: 0;
-    overflow: visible;
-}
+    .about-me .intro-content .main-copy .title {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 160px;}
 
-/* 1024 ↓ */
-@media (max-width: 1024px) {
- .about-me .intro-visual {
-    position: absolute;
-    left: 56%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15%;
-}
-}
+    .about-me .intro-content .desc-copy h2 {
+    font-size: 32px;}
 
-/* 768 ↓ */
-@media (max-width: 768px) {
-    .about-me .intro-visual {
-    position: absolute;
-    left: 56%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15%;
-}
+    .about-me .intro-content .desc-copy p {
+    font-size: 0.9rem;}
+
 }
 
 
+/* ⭐ 1280 ↓ (FHD 작은 창 대응) */
+@media (max-width: 1280px) {
+ 
+}
 
 
 
 
 /* Mobile (Max Width: 390px) */
 @media (max-width: 390px) {
-    .about-me .am-intro .main-copy span.sub {
-        font-size: 40px;
+
+        .about-me .am-intro {
+        position: relative;
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .about-me .am-intro .main-copy .title {
-        font-size: 60px;
+        .about-me .am-scene {
+        position: relative;
+        width: 100%;
+        margin-top: 60px;
+        padding-bottom: 70px;
+    }
+
+    .about-me .intro-content .main-copy span.sub {
+        display: block;
+        font-size: 50px;
+    }
+
+    .about-me .intro-content .main-copy .title {
+        font-family: 'Beau Rivage', cursive;
+        font-size: 96px;
+    }
+
+    .about-me .intro-content .main-copy .title {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 80px;}
+
+    .about-me .intro-content .desc-copy p {
+        font-size: 0.8rem;
+    }
+
+        .about-me .intro-content .desc-copy h2 {
+        font-size: 26px;
+    }
+
+    .about-me .intro-content .main-copy {
+    margin-bottom: 0px;
+}
+
+.about-me .am-title {
+    font-size: 24px;
+    margin: 0px 0 29px
+}
+
+.about-me .am-desc {
+    font-size: 14px;}
+
+    /* Collage Layout Mobile Fix: Make Image Top, Text Bottom */
+    .about-me .am-exhibition-content.left-text-layout.collage-layout {
+        flex-direction: column-reverse !important; /* Text(1) Image(2) -> Image(Top), Text(Bottom) */
+    }
+
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .am-left.collage-box,
+    .about-me .am-exhibition-content.left-text-layout.collage-layout .am-right.text-first {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Mobile Padding Adjustment for space */
+    .about-me .am-exhibition-content {
+        padding: 20px !important; /* Reduce padding to give more width to text */
+    }
+
+    /* Text Wrap Fix: Use keep-all and full width */
+    .about-me .am-desc,
+    .about-me .am-right.two .am-desc {
+        max-width: 100% !important; /* Allow full width */
+        word-break: keep-all !important; /* Don't split words */
+        font-size: 14px;
+        line-height: 1.6;
     }
 }

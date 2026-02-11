@@ -308,8 +308,8 @@
     transform: translateX(5px);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Tablet & Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
     .project-card {
         flex-direction: column;
         align-items: flex-start;
@@ -327,8 +327,8 @@
     }
 }
 
-/* Tablet & Mobile (Max Width: 1024px) */
-@media (max-width: 1024px) {
+/* Tablet & Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
     .project-list {
         width: 90%;
         display: flex;

@@ -141,7 +141,19 @@
 }
 
 @media (max-width: 390px) {
+
+.artwork {
+    width: 100%;
+    padding: 0 0 100px;}
+
     .art-title {
         font-size: 3rem;
     }
 }
+
+@media (max-width: 390px) {
+        .art-card {
+        width: 185px;
+    }
+}
+    

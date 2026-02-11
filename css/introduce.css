@@ -332,3 +332,80 @@
         transform: translateX(-50%) scale(1);
     }
 }
+
+
+@media (max-width: 390px) { 
+    .introduce .intro-text-item strong {
+    font-weight: 700;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.end-title {
+    font-size: 4rem;
+    margin-top: 0px;
+    margin-bottom: 30px; /* Reduced bottom margin */
+}
+
+/* Remove Top Whitespace COMPLETELY */
+.introduce-end {
+    justify-content: flex-start; /* Align to top */
+    padding-top: 0 !important; /* No padding */
+    min-height: auto;
+    height: auto;
+}
+
+.end-title {
+    font-size: 4rem;
+    margin-top: 0 !important; /* Force no top margin */
+    margin-bottom: 30px;
+    padding-top: 20px; /* Slight padding for visual buffer if needed, or 0 if strictly no space. Screenshot implies just start. Let's try 0. */
+    padding-top: 10px; /* Minimal breathing room from very edge */
+}
+
+
+    /* Profile Image on Top, Text Bottom */
+    .end-content-wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .end-profile-frame {
+        width: 80%;
+        max-width: 300px;
+        order: -1; /* Ensure it's first just in case, though HTML order is first */
+    }
+
+    .end-text-info {
+        width: 100%;
+        text-align: center;
+        padding-top: 0;
+    }
+    
+    .end-name-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .end-contact-info {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .end-desc p {
+        text-align: center;
+        padding-left: 0;
+        word-break: keep-all;
+    }
+
+
+    .end-name-en {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 3rem;}
+
+    .end-desc p {
+    font-size: 14px;}
+
+}
