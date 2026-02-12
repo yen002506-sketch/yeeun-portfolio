@@ -310,13 +310,13 @@
     }
 
     .skill-center-circle {
-        display: visible;
+        visibility: visible;
         width: 5%;
 
     }
 
     .skill-lines-area {
-        display: visible;
+        visibility: visible;
     }
 
     .skill-icons-row {

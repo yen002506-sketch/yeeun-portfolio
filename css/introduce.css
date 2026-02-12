@@ -295,9 +295,10 @@
     }
 
     .introduce .intro-sticky-wrap {
-        position: sticky;
+        position: relative;
         top: 0;
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -350,17 +351,17 @@
 /* Remove Top Whitespace COMPLETELY */
 .introduce-end {
     justify-content: flex-start; /* Align to top */
-    padding-top: 0 !important; /* No padding */
+    padding-top: 0 !important; /* No padding as per design */
     min-height: auto;
     height: auto;
+    padding-bottom: 50px; /* Keep bottom padding to prevent bottom collision */
 }
 
 .end-title {
-    font-size: 4rem;
+    font-size: 4rem; /* Restore original size */
     margin-top: 0 !important; /* Force no top margin */
     margin-bottom: 30px;
-    padding-top: 20px; /* Slight padding for visual buffer if needed, or 0 if strictly no space. Screenshot implies just start. Let's try 0. */
-    padding-top: 10px; /* Minimal breathing room from very edge */
+    padding-top: 10px; /* Minimal breathing room */
 }
 
 

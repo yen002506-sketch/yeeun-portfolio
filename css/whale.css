@@ -240,7 +240,9 @@
 
 @media (max-width: 390px) {
   .whale-line {
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
+    padding: 20px 0;
   }
 
   .whale-line .capsule-label {

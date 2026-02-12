@@ -359,7 +359,9 @@
 @media (max-width: 390px) {
 
       .whale-middle {
-        height: 65vh !important;}
+        min-height: 65vh;
+        height: auto !important;
+      }
 
       .whale-middle .wm-title-top {
         font-size: 80px;
