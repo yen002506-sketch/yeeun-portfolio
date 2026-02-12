@@ -37,7 +37,9 @@
   width: 100%;
   height: 91vh; /* Fallback */
   height: calc(var(--vh) * 91);
-  height: 91dvh;
+  @supports (height: 91dvh) {
+    height: 91dvh;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

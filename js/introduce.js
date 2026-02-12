@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!introSection || !introLinePath) return;
 
   // ✅ overlay를 화면 전체 덮도록 강제 (CSS 수정 없이도 동작하게)
+  // ✅ overlay를 화면 전체 덮도록 강제 (CSS 수정 없이도 동작하게)
   if (overlay) {
-    overlay.style.position = 'fixed';
+    overlay.style.position = 'absolute'; // Changed from fixed to absolute
     overlay.style.top = '0';
     overlay.style.left = '0';
     overlay.style.width = '100%';

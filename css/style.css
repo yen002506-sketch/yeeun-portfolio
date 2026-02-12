@@ -14,6 +14,20 @@
   --vh: 1vh;
 }
 
+:root {
+  --vh: 1vh;
+}
+
+.section-100vh {
+  height: 100vh; /* Fallback for very old browsers */
+  height: calc(var(--vh) * 100);
+}
+
+.min-section-100vh {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh) * 100);
+}
+
 @supports (height: 100dvh) {
   .section-100vh {
     height: 100dvh;
@@ -21,14 +35,6 @@
   .min-section-100vh {
     min-height: 100dvh;
   }
-}
-
-.section-100vh {
-  height: calc(var(--vh) * 100);
-}
-
-.min-section-100vh {
-  min-height: calc(var(--vh) * 100);
 }
 
 html,
@@ -196,7 +202,10 @@ img {
   width: 100%;
   height: 100vh; /* Fallback */
   height: calc(var(--vh) * 100);
-  height: 100dvh; 
+  /* 100dvh if supported */
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
   position: relative;
   overflow: hidden;
   /* wave가 밖으로 튀는 거 정리 */
