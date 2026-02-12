@@ -21,11 +21,25 @@
 
 
   <script>
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    let lastWidth = window.innerWidth;
+    
     function setVh() {
-      document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+      // Only update if width changed (horizontal resize) or if it's not a mobile scroll-induced resize
+      // Actually, for mobile, relying on 100dvh is better. 
+      // We keep this as fallback but prevent jitter by checking width.
+      const currentWidth = window.innerWidth;
+      
+      if (currentWidth !== lastWidth) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        lastWidth = currentWidth;
+      }
     }
+    
     window.addEventListener('resize', setVh);
-    setVh();
   </script>
 </head>
 

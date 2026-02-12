@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function resize() {
       // 캔버스 크기를 부모(.hero) 크기나 윈도우 크기에 맞춤
       // 여기서는 윈도우 크기로 설정 (Hero가 100vh이므로)
+      // Mobile optimization: Ignore veritcal resize caused by address bar
+      if (window.innerWidth <= 768 && window.innerWidth === canvas.width) {
+          return; 
+      }
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }

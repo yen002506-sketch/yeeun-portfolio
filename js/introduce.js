@@ -72,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      if (window.innerWidth <= 1024) {
+          // Mobile: Do absolutely nothing affecting scroll
+          return;
+      }
+
       snapped = true;
 
       if (overlay) overlay.style.opacity = '1';
