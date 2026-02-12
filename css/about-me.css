@@ -1074,8 +1074,8 @@
 
 
 
-/* Mobile (Max Width: 390px) */
-@media (max-width: 390px) {
+/* Mobile (Max Width: 600px) */
+@media (max-width: 600px) {
 
     .about-me .am-intro {
         position: relative;
@@ -1121,12 +1121,12 @@
     }
 
     .about-me .intro-content .main-copy {
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
 }
 
 .about-me .am-title {
     font-size: 24px;
-    margin: 0px 0 29px
+    margin: 0px 0 29px;
 }
 
 .about-me .am-desc {
