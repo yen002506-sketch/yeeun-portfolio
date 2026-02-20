@@ -25,20 +25,20 @@
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     let lastWidth = window.innerWidth;
-    
+
     function setVh() {
       // Only update if width changed (horizontal resize) or if it's not a mobile scroll-induced resize
       // Actually, for mobile, relying on 100dvh is better. 
       // We keep this as fallback but prevent jitter by checking width.
       const currentWidth = window.innerWidth;
-      
+
       if (currentWidth !== lastWidth) {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         lastWidth = currentWidth;
       }
     }
-    
+
     window.addEventListener('resize', setVh);
   </script>
 </head>
@@ -682,8 +682,6 @@
       <div class="project-list">
         <!-- Project 1 -->
         <article class="project-card">
-          <a href="https://www.figma.com/proto/RYTEeLPY1x5oFJmBnqJFcP/K-Brand-3%EC%A1%B0?page-id=2370%3A333&node-id=5149-6782&viewport=-541%2C942%2C0.06&t=1TOPYyGDMDKYb3vm-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2429%3A2110"
-            class="project-proposal p1" target="_blank">proposal</a>
           <div class="card-info">
             <span class="card-tag">TEAM PROJECT 1</span>
             <h3 class="card-title">One million</h3>
@@ -694,21 +692,19 @@
               Responsive Web<br>
               2025
             </p>
-          </div>
-          <a href="https://yunjioh.github.io/1million/" target="_blank" class="card-image-wrap">
-            <img src="img/project1.png" alt="One million Redesign" class="project-img">
-            <div class="project-overlay">
-              <span class="view-text">View</span>
-              <svg class="arrow-icon" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+            <div class="card-buttons">
+              <a href="https://www.figma.com/proto/RYTEeLPY1x5oFJmBnqJFcP/K-Brand-3%EC%A1%B0?page-id=2370%3A333&node-id=5149-6782&viewport=-541%2C942%2C0.06&t=1TOPYyGDMDKYb3vm-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2429%3A2110"
+                class="card-btn" target="_blank">기획서 바로가기</a>
+              <a href="https://yunjioh.github.io/1million/" class="card-btn" target="_blank">view site</a>
             </div>
-          </a>
+          </div>
+          <div class="card-image-wrap">
+            <img src="img/project1.png" alt="One million Redesign" class="project-img">
+          </div>
         </article>
 
         <!-- Project 2 -->
         <article class="project-card">
-          <a href="https://www.figma.com/proto/tm9aQoAJbcGwjBrndmpPAf/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_3%EC%A1%B0_%EC%9D%B4%EC%84%A0%EC%A7%84?page-id=4278%3A64424&node-id=4278-67445&viewport=686%2C354%2C0.15&t=hLXx9BYzFEkULP5S-1&scaling=scale-down-width&content-scaling=fixed" class="project-proposal p2" target="_blank">proposal</a>
           <div class="card-info">
             <span class="card-tag">TEAM PROJECT 2</span>
             <h3 class="card-title">NOVA</h3>
@@ -719,22 +715,20 @@
               Mobile Application<br>
               2025
             </p>
-          </div>
-          <a href="https://tubi-nova.vercel.app/" target="_blank" class="card-image-wrap">
-            <img src="img/project2.png" alt="NOVA Fandom App" class="project-img">
-            <div class="project-overlay">
-              <span class="view-text">View</span>
-              <svg class="arrow-icon" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+            <div class="card-buttons">
+              <a href="https://www.figma.com/proto/tm9aQoAJbcGwjBrndmpPAf/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_3%EC%A1%B0_%EC%9D%B4%EC%84%A0%EC%A7%84?page-id=4278%3A64424&node-id=4278-67445&viewport=686%2C354%2C0.15&t=hLXx9BYzFEkULP5S-1&scaling=scale-down-width&content-scaling=fixed"
+                class="card-btn" target="_blank">기획서 바로가기</a>
+              <a href="https://tubi-nova.vercel.app/" class="card-btn" target="_blank">view site</a>
             </div>
-          </a>
+          </div>
+          <div class="card-image-wrap">
+            <img src="img/project2.png" alt="NOVA Fandom App" class="project-img">
+          </div>
         </article>
 
         <!-- Project 3 -->
         <div class="last-card-track">
           <article class="project-card">
-            <a href="https://www.figma.com/proto/Jt8ca0GNw6nXb0SpOZS20d/29.%ED%95%9C%EC%98%88%EC%9D%80?page-id=782%3A518&node-id=2248-644&viewport=603%2C601%2C0.1&t=kp6dRGAGfpw5kfrx-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=782%3A1045" class="project-proposal p3" target="_blank">proposal</a>
             <div class="card-info">
               <span class="card-tag">Personal Project 1</span>
               <h3 class="card-title">Wini</h3>
@@ -745,16 +739,16 @@
                 Mobile Design<br>
                 2025
               </p>
-            </div>
-            <a href="https://www.figma.com/proto/Jt8ca0GNw6nXb0SpOZS20d/29.%ED%95%9C%EC%98%88%EC%9D%80?page-id=2262%3A24675&node-id=2262-30111&p=f&viewport=116%2C312%2C0.1&t=3gYXQTnJmrLVedbG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2262%3A28980" target="_blank" class="card-image-wrap">
-              <img src="img/project3.png" alt="Wini Wishlist App" class="project-img">
-              <div class="project-overlay">
-                <span class="view-text">View</span>
-                <svg class="arrow-icon" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+              <div class="card-buttons">
+                <a href="https://www.figma.com/proto/Jt8ca0GNw6nXb0SpOZS20d/29.%ED%95%9C%EC%98%88%EC%9D%80?page-id=782%3A518&node-id=2248-644&viewport=603%2C601%2C0.1&t=kp6dRGAGfpw5kfrx-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=782%3A1045"
+                  class="card-btn" target="_blank">기획서 바로가기</a>
+                <a href="https://www.figma.com/proto/Jt8ca0GNw6nXb0SpOZS20d/29.%ED%95%9C%EC%98%88%EC%9D%80?page-id=2262%3A24675&node-id=2262-30111&p=f&viewport=116%2C312%2C0.1&t=3gYXQTnJmrLVedbG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2262%3A28980"
+                  class="card-btn" target="_blank">view site</a>
               </div>
-            </a>
+            </div>
+            <div class="card-image-wrap">
+              <img src="img/project3.png" alt="Wini Wishlist App" class="project-img">
+            </div>
           </article>
         </div>
       </div>
