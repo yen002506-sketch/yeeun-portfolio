@@ -111,9 +111,8 @@ html {
 }
 
 body {
-  /* overflow-x: hidden; Removed to fix iOS scroll lock */
-  width: 100%;
-  min-height: 100%;
+  overflow-x: hidden;
+  /* scroll-snap-type can be on html or body depending on browser, generally html is safer for global snap */
 }
 
 a {
@@ -144,8 +143,6 @@ img {
 .wrap {
   background: #fff;
   font-family: "Pretendard", sans-serif;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 .header {
@@ -536,6 +533,10 @@ img {
 
 /* Tablet & Mobile (Max Width: 1024px) */
 @media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .hero {
     height: 100vh;
   }

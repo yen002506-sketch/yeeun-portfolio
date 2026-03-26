@@ -258,8 +258,7 @@
 
   /* --- Whale Middle --- */
   .whale-middle {
-    height: auto !important;
-    min-height: 100vh;
+    height: 100vh !important;
     padding: 50px 0;
     background-attachment: scroll;
   }
